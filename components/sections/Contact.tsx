@@ -16,8 +16,7 @@ export default function Contact() {
     setStatus('sending');
 
     try {
-      // Try sending via our API first
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://formspree.io/f/mgegqdpp', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -29,21 +28,7 @@ export default function Contact() {
         setStatus('success');
         setFormData({ name: '', email: '', message: '' });
       } else {
-        // If our API fails, try FormSpree as fallback
-        const formSpreeResponse = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
-        });
-
-        if (formSpreeResponse.ok) {
-          setStatus('success');
-          setFormData({ name: '', email: '', message: '' });
-        } else {
-          throw new Error('Failed to send message');
-        }
+        throw new Error('Failed to send message');
       }
     } catch (error) {
       console.error('Error sending message:', error);
@@ -51,7 +36,6 @@ export default function Contact() {
     }
   };
 
-  // Rest of your component remains the same
   return (
     <div className="max-w-4xl mx-auto px-4">
       <h2 className="text-3xl font-bold mb-8 text-center">Get In Touch</h2>
@@ -101,6 +85,7 @@ export default function Contact() {
             <input
               type="text"
               id="name"
+              name="name"
               required
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               value={formData.name}
@@ -114,6 +99,7 @@ export default function Contact() {
             <input
               type="email"
               id="email"
+              name="email"
               required
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               value={formData.email}
@@ -126,6 +112,7 @@ export default function Contact() {
             </label>
             <textarea
               id="message"
+              name="message"
               required
               rows={4}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
