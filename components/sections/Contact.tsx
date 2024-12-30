@@ -16,6 +16,7 @@ export default function Contact() {
     setStatus('sending');
 
     try {
+      // Try sending via our API first
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -28,13 +29,29 @@ export default function Contact() {
         setStatus('success');
         setFormData({ name: '', email: '', message: '' });
       } else {
-        setStatus('error');
+        // If our API fails, try FormSpree as fallback
+        const formSpreeResponse = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+
+        if (formSpreeResponse.ok) {
+          setStatus('success');
+          setFormData({ name: '', email: '', message: '' });
+        } else {
+          throw new Error('Failed to send message');
+        }
       }
     } catch (error) {
+      console.error('Error sending message:', error);
       setStatus('error');
     }
   };
 
+  // Rest of your component remains the same
   return (
     <div className="max-w-4xl mx-auto px-4">
       <h2 className="text-3xl font-bold mb-8 text-center">Get In Touch</h2>
