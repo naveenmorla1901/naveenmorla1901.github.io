@@ -1,10 +1,17 @@
 'use client';
 
 import React from 'react';
-import { Github, ExternalLink, Brain, Code, Network, Database, ArrowRight } from 'lucide-react';
-import PlaceholderImage from '../ui/PlaceholderImage';
+import { 
+  Github, 
+  ExternalLink, 
+  Brain, 
+  Code, 
+  Network, 
+  Database,
+  ArrowRight 
+} from 'lucide-react';
 
-const mainProjects = [
+const projects = [
   {
     title: "Graph Neural Networks for Manufacturing",
     description: "Advanced GNN models for manufacturing process optimization, focusing on defect prediction and quality control. Leveraged PyTorch Geometric and DGL to build custom neural architectures.",
@@ -73,29 +80,22 @@ const otherProjects = [
 const ProjectShowcase = () => {
   return (
     <div className="space-y-16">
-      {/* Main Projects Section */}
+      {/* Main Featured Projects */}
       <div className="grid lg:grid-cols-2 gap-8">
-        {mainProjects.map((project, index) => (
-          <div 
+        {projects.map((project, index) => (
+          <div
             key={index}
             className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
           >
-            <div className="relative">
-              <div className="absolute top-4 right-4 px-3 py-1 bg-blue-600 text-white text-sm rounded-full">
-                {project.category}
-              </div>
-              <PlaceholderImage
-                src="/images/placeholder-project.jpg"
-                alt={project.title}
-                aspectRatio="video"
-                className="w-full"
-              />
-            </div>
-
             <div className="p-6">
               <div className="flex items-center gap-3 mb-4">
                 {React.createElement(project.icon, { className: "w-6 h-6 text-blue-600" })}
-                <h3 className="text-xl font-bold">{project.title}</h3>
+                <div>
+                  <h3 className="text-xl font-bold">{project.title}</h3>
+                  <span className="inline-block px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">
+                    {project.category}
+                  </span>
+                </div>
               </div>
 
               <p className="text-gray-600 mb-6">{project.description}</p>
