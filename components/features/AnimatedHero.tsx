@@ -30,7 +30,7 @@ const AnimatedHero = () => {
       speedY: number;
       connections: number[];
 
-      constructor() {
+      constructor(canvas: HTMLCanvasElement) {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
         this.size = Math.random() * 2 + 1;
@@ -38,8 +38,7 @@ const AnimatedHero = () => {
         this.speedY = Math.random() * 2 - 1;
         this.connections = [];
       }
-
-      update() {
+      update(canvas: HTMLCanvasElement) {
         if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
         if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
         this.x += this.speedX;
@@ -60,7 +59,7 @@ const AnimatedHero = () => {
     const particleCount = Math.min(Math.floor(window.innerWidth * 0.05), 100);
     
     for (let i = 0; i < particleCount; i++) {
-      particles.push(new Particle());
+      particles.push(new Particle(canvas));
     }
 
     // Animation
@@ -69,13 +68,13 @@ const AnimatedHero = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Update and draw particles
-      particles.forEach((particle, index) => {
-        particle.update();
+      particles.forEach((particle) => {
+        particle.update(canvas);
         particle.draw();
 
         // Draw connections
         particles.forEach((particle2, index2) => {
-          if (index === index2) return;
+          if (particles.indexOf(particle) === index2) return;
           const dx = particle.x - particle2.x;
           const dy = particle.y - particle2.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
