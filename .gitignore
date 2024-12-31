@@ -9,6 +9,9 @@
 # next.js
 /.next/
 /out/
+/dist/
+
+# production
 /build
 
 # misc
@@ -23,13 +26,10 @@ yarn-error.log*
 
 # local env files
 .env*.local
+
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-# IDE
-.vscode/
-.idea/

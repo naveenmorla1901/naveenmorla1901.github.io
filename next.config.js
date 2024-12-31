@@ -1,34 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Set output mode based on environment
-  output: process.env.NODE_ENV === 'production' ? 'export' : undefined,
-  
-  // Configure image handling
+  output: 'export',  // Enable static HTML export
+  distDir: 'dist',   // Change build output directory
+  basePath: '/portfolio-new', // Match your repository name
   images: {
-    unoptimized: process.env.NODE_ENV === 'production',
+    unoptimized: true,
   },
-
-  // Configure experimental features
+  // Ensure assets are properly referenced
+  assetPrefix: process.env.NODE_ENV === 'production' 
+    ? 'https://naveenmorla1901.github.io/portfolio-new'
+    : '',
+  
+  // Disable server-side features since we're doing static export
   experimental: {
-    // Only set outputFileTracingRoot in production to avoid development warnings
-    ...(process.env.NODE_ENV === 'production' && {
-      outputFileTracingRoot: undefined
-    })
+    appDir: true,
   },
+}
 
-  // Set base path for GitHub Pages deployment
-  basePath: process.env.NODE_ENV === 'production' ? '/portfolio-new' : '',
-
-  // Enable React strict mode for better development experience
-  reactStrictMode: true,
-
-  // Add trailing slashes for consistent routing
-  trailingSlash: true,
-
-  // Customize webpack configuration if needed
-  webpack: (config) => {
-    return config;
-  }
-};
-
-module.exports = nextConfig;
+module.exports = nextConfig
