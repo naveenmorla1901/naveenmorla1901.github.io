@@ -17,16 +17,41 @@ const config: Config = {
           border: '#333333',
         },
       },
+      backgroundColor: {
+        'blue-gradient': 'linear-gradient(to right, #3B82F6, #4F46E5)',
+      },
       keyframes: {
         shimmer: {
           '100%': { transform: 'translateX(100%)' },
         },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
       },
       animation: {
         shimmer: 'shimmer 2s infinite',
+        fadeIn: 'fadeIn 0.5s ease-in-out',
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: 'none',
+            color: '#333',
+            a: {
+              color: '#3B82F6',
+              '&:hover': {
+                color: '#2563EB',
+              },
+            },
+          },
+        },
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }
+
 export default config

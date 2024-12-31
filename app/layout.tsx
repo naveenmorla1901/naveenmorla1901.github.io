@@ -1,14 +1,14 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
-import type { Metadata } from 'next'
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Naveen Morla - Full Stack Data Scientist',
-  description: 'Portfolio of Naveen Morla - Data Scientist and Software Engineer specializing in machine learning, data engineering, and full-stack development.',
-  keywords: 'Data Scientist, Software Engineer, Machine Learning, Full Stack Developer, Python, React, AWS',
-}
+  title: 'Naveen Morla - Data Scientist & ML Engineer',
+  description: 'Full Stack Data Scientist specializing in machine learning, AI, and software development. Building innovative solutions with cutting-edge technologies.',
+  keywords: 'Data Science, Machine Learning, AI, Deep Learning, Full Stack Development',
+};
 
 export default function RootLayout({
   children,
@@ -16,10 +16,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className} suppressHydrationWarning>
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
+      <body className={`${inter.className} antialiased`} suppressHydrationWarning>
         {children}
       </body>
     </html>
-  )
+  );
 }
