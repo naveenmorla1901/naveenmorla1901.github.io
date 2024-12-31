@@ -1,19 +1,32 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export function useScrollSpy() {
   const [activeSection, setActiveSection] = useState('');
+  // Use useRef to keep track of the timeout ID
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    let timeoutId: NodeJS.Timeout;
     let isScrolling = false;
     
     const handleScroll = () => {
-      if (!isScrolling) {
-        window.requestAnimationFrame(() => {
+      // If a scroll event is already being processed, skip this one
+      if (isScrolling) return;
+      
+      isScrolling = true;
+
+      // Clear any existing timeout
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+
+      // Use requestAnimationFrame for smooth performance
+      window.requestAnimationFrame(() => {
+        // Set a new timeout for debounced scroll handling
+        timeoutRef.current = setTimeout(() => {
           const sections = document.querySelectorAll('section[id]');
-          const scrollPosition = window.scrollY + 100;
+          const scrollPosition = window.scrollY + 100; // Offset for header
 
           let newActiveSection = '';
           sections.forEach(section => {
@@ -29,26 +42,27 @@ export function useScrollSpy() {
           if (newActiveSection !== activeSection) {
             setActiveSection(newActiveSection);
           }
+
           isScrolling = false;
-        });
-      }
-      isScrolling = true;
+        }, 100); // Debounce time of 100ms
+      });
     };
 
-    // Initial check
+    // Handle initial scroll position
     handleScroll();
 
-    // Add scroll listener
+    // Add scroll listener with passive flag for better performance
     window.addEventListener('scroll', handleScroll, { passive: true });
 
-    // Cleanup
+    // Cleanup function
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      if (timeoutId) {
-        clearTimeout(timeoutId);
+      // Clean up any existing timeout
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
       }
     };
-  }, [activeSection]);
+  }, [activeSection]); // Include activeSection in dependencies
 
   return activeSection;
 }
