@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "clean": "rimraf .next out dist",
-    "export": "next export"
+    "clean": "rimraf --no-glob .next && rimraf --no-glob out",
+    "predeploy": "npm run clean && npm run build"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
