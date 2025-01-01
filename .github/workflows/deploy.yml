@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NEXT_PUBLIC_BASE_PATH: /portfolio-new
+      NODE_ENV: production
 
     steps:
       - name: Checkout repository
@@ -31,10 +32,18 @@ jobs:
         uses: actions/configure-pages@v3
         
       - name: Install dependencies
-        run: npm ci
+        run: |
+          npm ci
+          npm install -g rimraf
+        
+      - name: Clean previous builds
+        run: npm run clean
         
       - name: Build with Next.js
         run: npm run build
+
+      - name: Add .nojekyll file
+        run: touch ./out/.nojekyll
         
       - name: Fix permissions
         run: |
