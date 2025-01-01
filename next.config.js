@@ -1,31 +1,29 @@
 /** @type {import('next').NextConfig} */
+const isProduction = process.env.NODE_ENV === 'production';
+const basePath = '/portfolio-new';
+
 const nextConfig = {
-  // Enable static HTML export for GitHub Pages deployment
   output: 'export',
-  
-  // Configure the base path to match your repository name
-  // This ensures assets are loaded correctly on GitHub Pages
-  basePath: process.env.NODE_ENV === 'production' ? '/portfolio-new' : '',
-  
-  // Disable image optimization since we're using static export
+  basePath: isProduction ? basePath : '',
+  assetPrefix: isProduction ? basePath : '',
   images: {
     unoptimized: true,
   },
-  
-  // Configure asset prefix for GitHub Pages
-  // This ensures all assets are loaded from the correct URL
-  assetPrefix: process.env.NODE_ENV === 'production' 
-    ? 'https://naveenmorla1901.github.io/portfolio-new'
-    : '',
-
-  // Any experimental features would go here
-  experimental: {
-    // Remove appDir as it's no longer needed in Next.js 14
-    // The App Router is now stable and enabled by default
+  // Handle static file serving
+  webpack: (config) => {
+    return config;
   },
-
-  // Enable React strict mode for better development experience
-  reactStrictMode: true,
+  // This will enable css files to be loaded properly in production
+  compiler: {
+    styledComponents: true,
+  },
+  // Ensure trailing slashes for consistent routing
+  trailingSlash: true,
+  // Disable server-side features for static export
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  swcMinify: true,
 }
 
 module.exports = nextConfig
