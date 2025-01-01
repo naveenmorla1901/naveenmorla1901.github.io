@@ -1,21 +1,17 @@
 /** @type {import('next').NextConfig} */
-const isProduction = process.env.NODE_ENV === 'production';
-const basePath = '/portfolio-new';
-
 const nextConfig = {
   output: 'export',
-  basePath: isProduction ? basePath : '',
-  assetPrefix: isProduction ? `${basePath}/` : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/portfolio-new' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/portfolio-new/' : '',
   images: {
     unoptimized: true,
   },
   // This will enable css files to be loaded properly in production
-  compiler: {
-    removeConsole: isProduction,
-  },
-  // Ensure trailing slashes for consistent routing
-  trailingSlash: true,
-  // Disable server-side features for static export
   reactStrictMode: true,
   swcMinify: true,
+  experimental: {
+    appDir: true
+  },
 }
+
+module.exports = nextConfig
