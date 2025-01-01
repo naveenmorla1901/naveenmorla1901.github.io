@@ -5,9 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "serve": "npx serve@latest out",
     "lint": "next lint",
-    "clean": "rimraf .next out"
+    "clean": "rimraf .next out",
+    "predeploy": "npm run clean && npm run build"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",

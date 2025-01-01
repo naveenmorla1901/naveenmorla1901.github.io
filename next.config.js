@@ -6,12 +6,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // This will enable css files to be loaded properly in production
   reactStrictMode: true,
   swcMinify: true,
-  experimental: {
-    appDir: true
-  },
 }
 
 module.exports = nextConfig
