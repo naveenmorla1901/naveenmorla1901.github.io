@@ -18,10 +18,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    env:
-      NEXT_PUBLIC_BASE_PATH: /naveenmorla1901.github.io
-      NODE_ENV: production
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -32,15 +28,9 @@ jobs:
           node-version: 18
           cache: npm
 
-      - name: Create postcss.config.js
-        run: |
-          echo "module.exports = {plugins: {'tailwindcss': {},'autoprefixer': {}}}" > postcss.config.js
-
       - name: Install dependencies
         run: |
-          npm cache clean --force
-          npm install autoprefixer postcss postcss-cli tailwindcss --save-dev
-          npm install
+          npm ci || (rm -rf node_modules package-lock.json && npm install)
 
       - name: Build
         run: npm run build
