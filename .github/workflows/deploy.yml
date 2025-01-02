@@ -34,12 +34,8 @@ jobs:
 
       - name: Install dependencies
         run: |
+          npm install
           npm install -g postcss postcss-cli autoprefixer
-          npm ci
-
-      - name: Create postcss config
-        run: |
-          echo "module.exports = {plugins: {tailwindcss: {},autoprefixer: {},},}" > postcss.config.js
 
       - name: Build with Next.js
         run: npm run build
