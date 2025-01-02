@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "serve": "npx serve@latest out",
+    "build": "next build && touch out/.nojekyll",
+    "start": "npx serve@latest out",
     "lint": "next lint",
     "clean": "rimraf .next out",
     "predeploy": "npm run clean && npm run build"

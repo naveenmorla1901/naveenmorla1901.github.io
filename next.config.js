@@ -8,6 +8,10 @@ const nextConfig = {
   },
   reactStrictMode: true,
   swcMinify: true,
+  // Disable server-specific features
+  trailingSlash: true,
+  // Configure static file handling
+  distDir: 'out',
 }
 
 module.exports = nextConfig
