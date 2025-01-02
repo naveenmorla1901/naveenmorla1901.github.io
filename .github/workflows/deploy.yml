@@ -32,12 +32,17 @@ jobs:
           node-version: 18
           cache: npm
 
+      - name: Create postcss.config.js
+        run: |
+          echo "module.exports = {plugins: {'tailwindcss': {},'autoprefixer': {}}}" > postcss.config.js
+
       - name: Install dependencies
         run: |
+          npm cache clean --force
+          npm install autoprefixer postcss postcss-cli tailwindcss --save-dev
           npm install
-          npm install -g postcss postcss-cli autoprefixer
 
-      - name: Build with Next.js
+      - name: Build
         run: npm run build
 
       - name: Setup Pages
