@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      NEXT_PUBLIC_BASE_PATH: /portfolio-new
+      NEXT_PUBLIC_BASE_PATH: /naveenmorla1901.github.io
       NODE_ENV: production
 
     steps:
