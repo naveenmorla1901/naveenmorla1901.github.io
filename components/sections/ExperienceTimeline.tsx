@@ -180,8 +180,53 @@ const certifications = [
 
 export default function ExperienceTimeline() {
   return (
-    <div className="max-w-6xl mx-auto">
+    <section className="max-w-6xl mx-auto py-20">
       <h2 className="text-3xl font-bold text-center mb-12">Professional Journey</h2>
+      
+      {/* Publications Section */}
+      <div className="bg-white p-6 rounded-lg shadow-md mb-8">
+        <h3 className="text-2xl font-semibold mb-6">Publications & Presentations</h3>
+        <div className="space-y-4">
+          <div className="border-l-4 border-blue-600 pl-4">
+            <h4 className="text-lg font-medium">"AI in Manufacturing"</h4>
+            <p className="text-gray-600">Presented at International Data Science Conference 2024</p>
+          </div>
+          <div className="border-l-4 border-blue-600 pl-4">
+            <h4 className="text-lg font-medium">"Optimizing HR Processes with AI"</h4>
+            <p className="text-gray-600">Published in Journal of Applied Data Science, 2023</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Awards Section */}
+      <div className="bg-white p-6 rounded-lg shadow-md mb-8">
+        <h3 className="text-2xl font-semibold mb-6">Awards & Recognition</h3>
+        <div className="space-y-4">
+          <div className="border-l-4 border-blue-600 pl-4">
+            <h4 className="text-lg font-medium">Employee of the Year</h4>
+            <p className="text-gray-600">THK Manufacturing of America, 2023</p>
+          </div>
+          <div className="border-l-4 border-blue-600 pl-4">
+            <h4 className="text-lg font-medium">Best Data Science Project</h4>
+            <p className="text-gray-600">University of Michigan, 2022</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Memberships Section */}
+      <div className="bg-white p-6 rounded-lg shadow-md mb-8">
+        <h3 className="text-2xl font-semibold mb-6">Professional Memberships</h3>
+        <div className="space-y-4">
+          <div className="border-l-4 border-blue-600 pl-4">
+            <h4 className="text-lg font-medium">Association for Computing Machinery (ACM)</h4>
+            <p className="text-gray-600">Member since 2021</p>
+          </div>
+          <div className="border-l-4 border-blue-600 pl-4">
+            <h4 className="text-lg font-medium">Data Science Association</h4>
+            <p className="text-gray-600">Member since 2020</p>
+          </div>
+        </div>
+      </div>
 
       {/* Work Experience Section */}
       <div className="mb-16">
@@ -307,6 +352,6 @@ export default function ExperienceTimeline() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

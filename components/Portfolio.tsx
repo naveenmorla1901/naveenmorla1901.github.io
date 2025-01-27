@@ -14,6 +14,10 @@ const DynamicSections = {
     loading: () => <div>Loading...</div>,
     ssr: false
   }),
+  Languages: dynamic(() => import('./sections/Languages'), {
+    loading: () => <div>Loading...</div>,
+    ssr: false
+  }),
   Skills: dynamic(() => import('./sections/Skills'), {
     loading: () => <div>Loading...</div>,
     ssr: false
@@ -39,7 +43,8 @@ export default function Portfolio() {
             <div className="hidden md:flex space-x-8">
               <a href="#about" className="text-gray-600 hover:text-blue-600 transition-colors">About</a>
               <a href="#experience" className="text-gray-600 hover:text-blue-600 transition-colors">Experience</a>
-              <a href="#skills" className="text-gray-600 hover:text-blue-600 transition-colors">Skills</a>
+              <a href="#languages" className="text-gray-600 hover:text-blue-600 transition-colors">Languages</a>
+            <a href="#skills" className="text-gray-600 hover:text-blue-600 transition-colors">Skills</a>
               <a href="#projects" className="text-gray-600 hover:text-blue-600 transition-colors">Projects</a>
               <a href="#contact" className="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
             </div>
@@ -51,10 +56,10 @@ export default function Portfolio() {
       <section className="pt-16 min-h-screen flex items-center bg-gradient-to-r from-blue-600 to-indigo-700">
         <div className="max-w-6xl mx-auto px-4 py-20 text-center text-white">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Data Scientist & ML Engineer
+            Data Scientist & ML Engineer | THK Manufacturing of America
           </h1>
           <p className="text-xl md:text-2xl mb-8 opacity-90">
-            Building AI-Powered Solutions | Transforming Data into Impact
+            Building AI-Powered Solutions | Transforming Data into Impact | Master's in Data Science
           </p>
           
           {/* Key Value Propositions */}
@@ -89,6 +94,14 @@ export default function Portfolio() {
             <p className="flex items-center justify-center">
               <span className="text-2xl mr-2">📊</span>
               Processed and analyzed 10,000+ resumes with advanced NLP
+            </p>
+            <p className="flex items-center justify-center">
+              <span className="text-2xl mr-2">🤖</span>
+              Developed predictive models with 95% accuracy for manufacturing processes
+            </p>
+            <p className="flex items-center justify-center">
+              <span className="text-2xl mr-2">🌐</span>
+              Implemented real-time data processing systems handling 1M+ requests/day
             </p>
           </div>
 
@@ -132,6 +145,10 @@ export default function Portfolio() {
 
           <section id="experience" className="py-20">
             <DynamicSections.ExperienceTimeline />
+          </section>
+
+          <section id="languages" className="py-20">
+            <DynamicSections.Languages />
           </section>
 
           <section id="skills" className="py-20">
