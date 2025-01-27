@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 export const metadata: Metadata = {
   title: 'Naveen Morla - Data Scientist & ML Engineer',
@@ -12,8 +13,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className="antialiased">{children}</body>
+    <html lang="en">
+      <body>
+        {children}
+        <GoogleAnalytics />
+      </body>
     </html>
   );
 }
