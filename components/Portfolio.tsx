@@ -1,7 +1,7 @@
 'use client';
 
 import React, { Suspense } from 'react';
-import { Github, Linkedin, Mail, Brain, Database, Code } from 'lucide-react';
+import { Github, Linkedin, Mail, Brain, Database, Code, Cloud, LineChart } from 'lucide-react';
 import dynamic from 'next/dynamic';
 
 // Dynamic imports for better performance and code splitting
@@ -56,52 +56,52 @@ export default function Portfolio() {
       <section className="pt-16 min-h-screen flex items-center bg-gradient-to-r from-blue-600 to-indigo-700">
         <div className="max-w-6xl mx-auto px-4 py-20 text-center text-white">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Data Scientist & ML Engineer | THK Manufacturing of America
+            Data Scientist & Software Engineer | THK Manufacturing of America
           </h1>
           <p className="text-xl md:text-2xl mb-8 opacity-90">
-            Building AI-Powered Solutions | Transforming Data into Impact | Master's in Data Science
+            RAG & LLM Integration | Full-Stack Development | Manufacturing Data Analytics | Master's in Data Science
           </p>
           
           {/* Key Value Propositions */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             <div className="p-6 bg-white bg-opacity-10 rounded-lg hover:bg-opacity-20 transition-all">
               <Brain className="w-8 h-8 mx-auto mb-4" />
-              <h3 className="text-lg font-semibold mb-2">ML/AI Expert</h3>
-              <p>Implementing cutting-edge ML models and LLMs for real-world applications</p>
+              <h3 className="text-lg font-semibold mb-2">LLM & RAG Expert</h3>
+              <p>Building retrieval-augmented systems using LangChain, vector databases, and fine-tuning LLMs</p>
             </div>
             <div className="p-6 bg-white bg-opacity-10 rounded-lg hover:bg-opacity-20 transition-all">
-              <Database className="w-8 h-8 mx-auto mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Data Architecture</h3>
-              <p>Designing scalable data pipelines and optimized database solutions</p>
+              <LineChart className="w-8 h-8 mx-auto mb-4" />
+              <h3 className="text-lg font-semibold mb-2">AI Applications</h3>
+              <p>Developing predictive models for manufacturing and inventory optimization</p>
             </div>
             <div className="p-6 bg-white bg-opacity-10 rounded-lg hover:bg-opacity-20 transition-all">
-              <Code className="w-8 h-8 mx-auto mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Full Stack Developer</h3>
-              <p>Building end-to-end applications with modern tech stack</p>
+              <Cloud className="w-8 h-8 mx-auto mb-4" />
+              <h3 className="text-lg font-semibold mb-2">Cloud & Infrastructure</h3>
+              <p>Managing containerized microservices with Kubernetes and Docker on AWS</p>
             </div>
           </div>
 
           {/* Achievement Highlights */}
           <div className="text-lg mb-12 space-y-2">
             <p className="flex items-center justify-center">
-              <span className="text-2xl mr-2">🎯</span>
-              Enhanced hiring efficiency by 30% with AI-powered resume parsing
-            </p>
-            <p className="flex items-center justify-center">
               <span className="text-2xl mr-2">⚡</span>
-              Reduced query response times by 40% through database optimization
-            </p>
-            <p className="flex items-center justify-center">
-              <span className="text-2xl mr-2">📊</span>
-              Processed and analyzed 10,000+ resumes with advanced NLP
+              Built high-performance APIs with FastAPI for manufacturing data systems
             </p>
             <p className="flex items-center justify-center">
               <span className="text-2xl mr-2">🤖</span>
-              Developed predictive models with 95% accuracy for manufacturing processes
+              Developed dual-LLM architecture for natural language to web scraping conversion
             </p>
             <p className="flex items-center justify-center">
-              <span className="text-2xl mr-2">🌐</span>
-              Implemented real-time data processing systems handling 1M+ requests/day
+              <span className="text-2xl mr-2">📊</span>
+              Created job market analytics system tracking 100+ corporate career sites hourly
+            </p>
+            <p className="flex items-center justify-center">
+              <span className="text-2xl mr-2">🧠</span>
+              Implemented Graph Neural Networks for anomaly detection in time series data
+            </p>
+            <p className="flex items-center justify-center">
+              <span className="text-2xl mr-2">🔍</span>
+              Built intelligent loan document processing system using RAG and AWS Bedrock
             </p>
           </div>
 
@@ -131,6 +131,14 @@ export default function Portfolio() {
             >
               <Mail className="w-5 h-5 mr-2" />
               <span>Email</span>
+            </a>
+            <a
+              href="/Naveen_morla_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-8 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg hover:from-green-600 hover:to-green-700 transition-colors"
+            >
+              <span>Download Resume</span>
             </a>
           </div>
         </div>

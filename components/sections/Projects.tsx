@@ -1,99 +1,147 @@
 'use client';
 
 import React from 'react';
-import { Github, ExternalLink, Code, Database, Brain, BarChart, LineChart, Server } from 'lucide-react';
+import { Github, ExternalLink, Code, Database, Brain, BarChart, LineChart, Server, Globe } from 'lucide-react';
 
 // Comprehensive project data structure showcasing technical depth and measurable impact
 const projects = [
   {
-    title: "AI-Powered Resume Parser",
-    description: "Developed an intelligent resume parsing system using advanced NLP and deep learning techniques. The system automatically extracts and categorizes information from resumes, significantly improving the hiring process efficiency and candidate matching accuracy.",
+    title: "RAG-LLM-LangChain",
+    description: "Intelligent Loan Document Processing System using RAG (Retrieval-Augmented Generation) with AWS Bedrock and ChromaDB. This system helps analyze loan applications, policy documents, and historical loan data.",
+    category: "AI/ML",
+    icon: Brain,
+    metrics: [
+      "Implemented document processing for PDF and CSV files",
+      "Built semantic search with AWS Bedrock Embeddings",
+      "Created intelligent question answering with LLM support"
+    ],
+    technical_details: [
+      "Developed vector storage with ChromaDB for efficient retrieval",
+      "Implemented source reference tracking for document citations",
+      "Added fallback responses for handling connection issues",
+      "Built features for progress tracking and enhanced error handling"
+    ],
+    technologies: [
+      "Retrieval-Augmented Generation (RAG)", "LangChain", "Natural Language Processing (NLP)", "Large Language Models (LLM)", "AWS Bedrock", "ChromaDB"
+    ],
+    github: "https://github.com/naveenmorla1901/RAG-LLM-Deepseek",
+    demo: null,
+    image: "/api/placeholder/600/400"
+  },
+  {
+    title: "AutoScrape AI",
+    description: "Innovative platform that transforms natural language requests into functional web scraping code using dual Large Language Models (LLMs). Users simply describe what data they need, and the system generates, tests, and refines Python scraping code.",
+    category: "AI/Web Scraping",
+    icon: Globe,
+    metrics: [
+      "Built dual-LLM architecture with Gemini and user-selected coding LLMs",
+      "Implemented intelligent refinement loop for code generation",
+      "Created data validation to verify extracted data fulfills requirements"
+    ],
+    technical_details: [
+      "Developed with FastAPI backend for asynchronous processing",
+      "Built responsive frontend interface with Bootstrap",
+      "Created secure sandbox execution environment with resource limitations",
+      "Implemented specialized error detection for web scraping issues",
+      "Built JSON extraction and validation against requirements"
+    ],
+    technologies: [
+      "Large Language Model (LLM) Integration", "AI Application Development", "Full-Stack Development", "LangChain", "OpenAI API", "Claude API", "Gemini API", "FastAPI"
+    ],
+    github: "https://github.com/naveenmorla1901/auto-scrapper",
+    demo: null,
+    image: "/api/placeholder/600/400"
+  },
+  {
+    title: "Job Market Analytics Dashboard",
+    description: "Comprehensive job tracking system that automatically scrapes, processes, and visualizes tech job postings from 100+ corporate career sites every hour, providing real-time insights into the tech job market.",
+    category: "Data Analytics",
+    icon: BarChart,
+    metrics: [
+      "Processes 1,000+ job listings daily from over 100 corporate sites",
+      "Implemented 30+ custom web scrapers for major tech companies",
+      "Provides real-time job market insights with advanced filtering"
+    ],
+    technical_details: [
+      "Built full-stack application with Python, FastAPI, PostgreSQL, and Streamlit",
+      "Created intelligent role validation system using NLP techniques",
+      "Designed interactive dashboard with real-time filtering capabilities",
+      "Automated hourly job data updates using APScheduler",
+      "Deployed on Oracle Cloud with CI/CD pipeline via GitHub Actions"
+    ],
+    technologies: [
+      "Python", "FastAPI", "PostgreSQL", "Streamlit", "Web Scraping", "SQLAlchemy", "GitHub Actions", "Oracle Cloud", "CI/CD", "Data Visualization"
+    ],
+    github: "https://github.com/naveenmorla1901/auto-scrapper",
+    demo: null,
+    image: "/api/placeholder/600/400"
+  },
+  {
+    title: "Graph Neural Network-Based Anomaly Detection",
+    description: "Research project focusing on anomaly detection in multivariate time series data using Graph Neural Networks. Associated with Bowling Green State University.",
     category: "Machine Learning",
     icon: Brain,
     metrics: [
-      "Improved hiring process efficiency by 30%",
-      "Processed and analyzed 10,000+ resumes",
-      "Increased candidate matching accuracy by 20%"
+      "Developed novel GNN approach for multivariate time series analysis",
+      "Presented research at university symposium",
+      "Created reusable framework for anomaly detection"
     ],
     technical_details: [
-      "Implemented BERT-based NLP models for text classification and entity extraction",
-      "Built custom named entity recognition (NER) system for resume-specific data",
-      "Created scalable API endpoints with FastAPI for seamless integration",
-      "Deployed models on AWS SageMaker with automated retraining pipeline"
+      "Implemented graph structure representation of time series data",
+      "Developed neural network architectures for pattern recognition",
+      "Created visualization components for anomaly detection results",
+      "Benchmarked against traditional anomaly detection techniques"
     ],
     technologies: [
-      "Python", "NLTK", "Spacy", "TensorFlow", "AWS", "FastAPI", "Docker"
+      "Graph Neural Networks", "Python", "Deep Learning", "Time Series Analysis", "PyTorch", "Data Visualization"
     ],
-    github: "https://github.com/naveenmorla1901/resume-parser",
+    github: "https://github.com/naveenmorla1901/GNN",
     demo: null,
     image: "/api/placeholder/600/400"
   },
   {
-    title: "Manufacturing Predictive Analytics",
-    description: "Built an end-to-end predictive analytics system for manufacturing processes using machine learning. The system forecasts lead times, optimizes inventory management, and provides real-time insights through interactive dashboards.",
-    category: "Data Science",
+    title: "MGMT Glioblastoma Prediction from MRI",
+    description: "This project investigates whether there are sufficient feature differences in MGMT positive and MGMT negative glioblastomas to classify them based on MRI scans alone using Deep Convolutional Neural Networks.",
+    category: "Medical AI",
+    icon: Brain,
+    metrics: [
+      "Developed CNN model for medical image classification",
+      "Achieved significant accuracy in predicting MGMT status",
+      "Created visualization tools for feature importance"
+    ],
+    technical_details: [
+      "Implemented deep learning architectures for medical image analysis",
+      "Developed preprocessing pipeline for MRI scans",
+      "Created data augmentation techniques for limited medical datasets",
+      "Built evaluation framework to assess model performance"
+    ],
+    technologies: [
+      "Deep Learning", "Convolutional Neural Networks", "Medical Image Analysis", "Python", "TensorFlow", "Data Visualization"
+    ],
+    github: null,
+    demo: null,
+    image: "/api/placeholder/600/400"
+  },
+  {
+    title: "Nutrition Dashboard",
+    description: "Interactive dashboard for analyzing nutrition values and calorie consumption of daily meals over a period of time, providing insights into dietary patterns and trends.",
+    category: "Data Visualization",
     icon: LineChart,
     metrics: [
-      "Reduced query response times by 40%",
-      "Improved inventory optimization by 25%",
-      "Decreased production downtime by 15%"
+      "Comprehensive tracking of nutrition metrics and calorie intake",
+      "Visualization of dietary patterns and trends",
+      "Analysis of nutritional balance and deficit areas"
     ],
     technical_details: [
-      "Developed time series forecasting models with PyTorch for demand prediction",
-      "Implemented real-time data processing pipeline with Kafka and PySpark",
-      "Created interactive dashboards with React and D3.js for data visualization",
-      "Containerized application with Docker and Kubernetes for scalability"
+      "Built interactive dashboard using Tableau",
+      "Integrated SQL database for data storage and retrieval",
+      "Deployed on AWS for accessibility",
+      "Created Excel templates for data entry and reporting"
     ],
     technologies: [
-      "PyTorch", "FastAPI", "PostgreSQL", "Docker", "Kubernetes", "React", "Redux"
+      "SQL", "Tableau", "Amazon Web Services (AWS)", "Microsoft Excel", "Data Visualization", "Data Analysis"
     ],
-    github: "https://github.com/naveenmorla1901/manufacturing-analytics",
-    demo: null,
-    image: "/api/placeholder/600/400"
-  },
-  {
-    title: "Data Pipeline Optimization",
-    description: "Engineered a high-performance ETL pipeline using modern data engineering tools. The system handles large-scale data processing and transformation while ensuring data quality and reliability throughout the pipeline.",
-    category: "Data Engineering",
-    icon: Server,
-    metrics: [
-      "Processed 10M+ records with 5+ hours saved per batch",
-      "Improved data accuracy by 20% through automated validation",
-      "Reduced processing costs by 30% through optimization"
-    ],
-    technical_details: [
-      "Built distributed processing system with PySpark for scalable data handling",
-      "Implemented comprehensive data quality checks and monitoring systems",
-      "Created automated testing and deployment pipeline with GitHub Actions",
-      "Designed fault-tolerant architecture with error handling and recovery"
-    ],
-    technologies: [
-      "PySpark", "AWS", "Airflow", "Python", "SQL", "MongoDB", "Docker"
-    ],
-    github: "https://github.com/naveenmorla1901/etl-pipeline",
-    demo: null,
-    image: "/api/placeholder/600/400"
-  },
-  {
-    title: "Interactive Analytics Dashboard",
-    description: "Designed and implemented a comprehensive analytics platform that provides real-time insights through interactive visualizations. The system integrates multiple data sources and allows for dynamic data exploration.",
-    category: "Full Stack Development",
-    icon: BarChart,
-    metrics: [
-      "Increased stakeholder engagement by 30%",
-      "Reduced decision-making time by 18%",
-      "Improved data accessibility for 200+ users"
-    ],
-    technical_details: [
-      "Built responsive frontend with React and Material-UI",
-      "Implemented real-time data updates using WebSocket",
-      "Created reusable chart components with D3.js",
-      "Designed RESTful API with FastAPI for data retrieval"
-    ],
-    technologies: [
-      "React", "TypeScript", "D3.js", "FastAPI", "PostgreSQL", "Redis", "Docker"
-    ],
-    github: "https://github.com/naveenmorla1901/analytics-dashboard",
+    github: null,
     demo: null,
     image: "/api/placeholder/600/400"
   }
@@ -133,7 +181,7 @@ export default function Projects() {
 
                 {/* Key Metrics */}
                 <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-gray-500 mb-3">Key Achievements:</h4>
+                  <h4 className="text-sm font-semibold text-gray-500 mb-3">Key Features:</h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {project.metrics.map((metric, mIndex) => (
                       <div key={mIndex} className="flex items-center text-sm text-gray-600">

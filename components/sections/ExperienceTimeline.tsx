@@ -6,7 +6,7 @@ import { Calendar, MapPin, Briefcase, GraduationCap, Award, Code, Brain, Databas
 // Comprehensive experience data structure including achievements and technologies
 const experiences = [
   {
-    title: "Data Scientist & Software Engineer",
+    title: "Data Scientist",
     company: "THK Manufacturing of America",
     location: "Columbus, Ohio",
     period: "February 2024 - Present",
@@ -14,23 +14,23 @@ const experiences = [
     description: "Leading data science initiatives to optimize manufacturing processes and improve operational efficiency through advanced ML solutions.",
     achievements: [
       {
-        title: "Manufacturing Process Optimization",
-        description: "Engineered high-performance APIs using FastAPI with advanced caching, improving data processing efficiency by 40%",
+        title: "API Development",
+        description: "Engineered high-performance APIs using FastAPI with advanced caching for seamless data ingestion, processing, and retrieval of sensor and inventory datasets",
         icon: Code
       },
       {
-        title: "Predictive Analytics Implementation",
-        description: "Developed ML models using PyTorch and TensorFlow for lead time forecasting and inventory optimization",
+        title: "Predictive Modeling",
+        description: "Developed predictive models utilizing scikit-learn and TensorFlow, enhancing lead time forecasting and optimizing inventory management",
         icon: Brain
       },
       {
-        title: "Data Pipeline Architecture",
-        description: "Designed and implemented scalable data pipelines using Kubernetes and Docker for efficient big data processing",
+        title: "Data Infrastructure",
+        description: "Architected and managed containerized microservices with Kubernetes and Docker, ensuring scalable and efficient big data processing pipelines",
         icon: Database
       }
     ],
     technologies: [
-      "FastAPI", "PyTorch", "TensorFlow", "Kubernetes", "Docker", "PostgreSQL", "React", "Python"
+      "FastAPI", "PyTorch", "TensorFlow", "Kubernetes", "Docker", "PostgreSQL", "React", "Python", "Polars", "PySpark"
     ]
   },
   {
@@ -42,23 +42,23 @@ const experiences = [
     description: "Led the development of AI-powered solutions for talent acquisition and data analysis, significantly improving hiring processes.",
     achievements: [
       {
-        title: "AI-Powered Resume Parser",
-        description: "Developed an innovative resume parsing system using NLP and deep learning, improving hiring efficiency by 30%",
+        title: "Resume Parsing System",
+        description: "Developed a system using Python, deep learning, and Spark for the Talent Acquisition Management System, enhancing hiring efficiency by 30%",
         icon: Brain
       },
       {
         title: "Database Optimization",
-        description: "Optimized SQL databases resulting in 40% reduction in query response times and improved data handling",
+        description: "Spearheaded the normalization of SQL databases, resulting in 40% reduction in query response times and improved data handling",
         icon: Database
       },
       {
-        title: "Analytics Dashboard Development",
-        description: "Created interactive dashboards using Power BI, increasing stakeholder engagement by 30%",
+        title: "Data Collection & Labeling",
+        description: "Orchestrated the collection and manual labeling of over 10,000 resumes, enhancing training dataset accuracy by 15%",
         icon: Code
       }
     ],
     technologies: [
-      "Python", "NLP", "Deep Learning", "SQL", "AWS", "Power BI", "NLTK", "Spacy"
+      "Python", "AWS", "NLTK", "NLP", "Spacy", "SQL", "Spark", "Power BI", "AWS Quick Sight"
     ]
   },
   {
@@ -70,23 +70,23 @@ const experiences = [
     description: "Focused on data analysis and visualization to drive business insights and improve decision-making processes.",
     achievements: [
       {
-        title: "ETL Pipeline Development",
-        description: "Built efficient ETL pipelines using Python and SQL, processing over 10 million records",
-        icon: Database
-      },
-      {
-        title: "Analytics Implementation",
-        description: "Developed analytics dashboards leading to 25% increase in conversion rates",
+        title: "Analytics Dashboard Development",
+        description: "Developed and launched dynamic analytics dashboards using Tableau, hosted on AWS, facilitating instant data-driven insights",
         icon: Code
       },
       {
-        title: "Process Optimization",
-        description: "Implemented data processing optimizations saving 5+ hours per 10M records",
+        title: "ETL Pipeline Implementation",
+        description: "Designed and implemented efficient ETL pipelines leveraging Python, SQL, and Spark, streamlining data flow and saving over 5 hours per 10 million records",
+        icon: Database
+      },
+      {
+        title: "A/B Testing & Analytics",
+        description: "Spearheaded A/B testing and hypothesis evaluations on AWS to inform data-centric decisions, employing advanced machine learning techniques",
         icon: Brain
       }
     ],
     technologies: [
-      "Python", "SQL", "Tableau", "ETL", "Data Mining", "Statistical Analysis"
+      "Python", "SQL", "Tableau", "ETL", "AWS", "Hadoop", "Machine Learning", "A/B Testing"
     ]
   }
 ];
@@ -170,11 +170,25 @@ const certifications = [
     icon: Code
   },
   {
+    name: "SQL for Data Analysis",
+    issuer: "DataCamp",
+    date: "2022",
+    description: "Advanced SQL techniques for data analysis",
+    icon: Database
+  },
+  {
     name: "Spark for Machine Learning & AI",
     issuer: "Databricks",
     date: "2023",
     description: "Large-scale data processing and ML implementations",
     icon: Brain
+  },
+  {
+    name: "Data Science Bootcamp",
+    issuer: "Udemy",
+    date: "2022",
+    description: "Comprehensive data science and ML training",
+    icon: BookOpen
   }
 ];
 
@@ -185,45 +199,15 @@ export default function ExperienceTimeline() {
       
       {/* Publications Section */}
       <div className="bg-white p-6 rounded-lg shadow-md mb-8">
-        <h3 className="text-2xl font-semibold mb-6">Publications & Presentations</h3>
+        <h3 className="text-2xl font-semibold mb-6">Research Projects</h3>
         <div className="space-y-4">
           <div className="border-l-4 border-blue-600 pl-4">
-            <h4 className="text-lg font-medium">"AI in Manufacturing"</h4>
-            <p className="text-gray-600">Presented at International Data Science Conference 2024</p>
+            <h4 className="text-lg font-medium">Graph Neural Network-Based Anomaly Detection</h4>
+            <p className="text-gray-600">Multivariate Time Series data analysis at Bowling Green State University</p>
           </div>
           <div className="border-l-4 border-blue-600 pl-4">
-            <h4 className="text-lg font-medium">"Optimizing HR Processes with AI"</h4>
-            <p className="text-gray-600">Published in Journal of Applied Data Science, 2023</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Awards Section */}
-      <div className="bg-white p-6 rounded-lg shadow-md mb-8">
-        <h3 className="text-2xl font-semibold mb-6">Awards & Recognition</h3>
-        <div className="space-y-4">
-          <div className="border-l-4 border-blue-600 pl-4">
-            <h4 className="text-lg font-medium">Employee of the Year</h4>
-            <p className="text-gray-600">THK Manufacturing of America, 2023</p>
-          </div>
-          <div className="border-l-4 border-blue-600 pl-4">
-            <h4 className="text-lg font-medium">Best Data Science Project</h4>
-            <p className="text-gray-600">University of Michigan, 2022</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Memberships Section */}
-      <div className="bg-white p-6 rounded-lg shadow-md mb-8">
-        <h3 className="text-2xl font-semibold mb-6">Professional Memberships</h3>
-        <div className="space-y-4">
-          <div className="border-l-4 border-blue-600 pl-4">
-            <h4 className="text-lg font-medium">Association for Computing Machinery (ACM)</h4>
-            <p className="text-gray-600">Member since 2021</p>
-          </div>
-          <div className="border-l-4 border-blue-600 pl-4">
-            <h4 className="text-lg font-medium">Data Science Association</h4>
-            <p className="text-gray-600">Member since 2020</p>
+            <h4 className="text-lg font-medium">Predicting MGMT in Glioblastomas From MRI Scans</h4>
+            <p className="text-gray-600">Using Deep Convolutional Neural Networks at Bowling Green State University</p>
           </div>
         </div>
       </div>
