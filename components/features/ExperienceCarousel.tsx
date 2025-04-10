@@ -1,12 +1,11 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { 
-  Briefcase, 
-  Calendar, 
-  MapPin, 
-  Brain, 
-  Database, 
+import React, { useState, useEffect, useRef } from 'react';
+import {
+  Calendar,
+  MapPin,
+  Brain,
+  Database,
   Code,
   ChevronLeft,
   ChevronRight
@@ -72,45 +71,168 @@ const experiences = [
 const ExperienceCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [useFallback, setUseFallback] = useState(false);
+
+  // Use useRef to track if component is mounted
+  const isMounted = useRef(true);
+
+  // Clean up on unmount
+  useEffect(() => {
+    return () => {
+      isMounted.current = false;
+    };
+  }, []);
+
+  // Handle errors gracefully
+  useEffect(() => {
+    const handleError = (event: ErrorEvent) => {
+      if (event.error && event.error.message && event.error.message.includes('message channel closed')) {
+        event.preventDefault();
+        if (isMounted.current) {
+          setError('An error occurred with the carousel. Please refresh the page.');
+          setIsAnimating(false);
+        }
+      }
+    };
+
+    window.addEventListener('error', handleError);
+    return () => window.removeEventListener('error', handleError);
+  }, []);
 
   const rotateExperiences = (direction: 'left' | 'right') => {
     if (isAnimating) return;
-    
-    setIsAnimating(true);
-    const newIndex = direction === 'left' 
-      ? (activeIndex - 1 + experiences.length) % experiences.length
-      : (activeIndex + 1) % experiences.length;
-    
-    setActiveIndex(newIndex);
-    setTimeout(() => setIsAnimating(false), 500);
+
+    try {
+      setIsAnimating(true);
+      const newIndex = direction === 'left'
+        ? (activeIndex - 1 + experiences.length) % experiences.length
+        : (activeIndex + 1) % experiences.length;
+
+      setActiveIndex(newIndex);
+
+      // Only update state if component is still mounted
+      const timer = setTimeout(() => {
+        if (isMounted.current) {
+          setIsAnimating(false);
+        }
+      }, 500);
+
+      // Clear timeout if component unmounts
+      return () => clearTimeout(timer);
+    } catch (err) {
+      console.error('Error in carousel navigation:', err);
+      if (isMounted.current) {
+        setIsAnimating(false);
+        setError('An error occurred. Please try again.');
+      }
+    }
   };
 
   return (
     <div className="max-w-6xl mx-auto px-4">
       <h2 className="text-3xl font-bold text-center mb-12">Professional Journey</h2>
-      
-      <div className="relative min-h-[600px] flex items-center">
+
+      {error && (
+        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4" role="alert">
+          <p>{error}</p>
+          <div className="flex space-x-2 mt-2">
+            <button
+              onClick={() => {
+                setError(null);
+                setActiveIndex(0);
+                setIsAnimating(false);
+              }}
+              className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded text-sm"
+            >
+              Reset
+            </button>
+            <button
+              onClick={() => {
+                setError(null);
+                setUseFallback(true);
+              }}
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded text-sm"
+            >
+              Use Simple View
+            </button>
+          </div>
+        </div>
+      )}
+
+      {useFallback ? (
+        // Fallback simple view without animations
+        <div className="space-y-8">
+          {experiences.map((exp, index) => (
+            <div key={index} className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-all">
+              <div className="flex justify-between items-start mb-4">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-800">{exp.role}</h3>
+                  <p className="text-blue-600 font-medium">{exp.company}</p>
+                </div>
+                <div className="text-right">
+                  <div className="flex items-center text-gray-600 mb-1">
+                    <Calendar className="w-4 h-4 mr-1" />
+                    <span>{exp.period}</span>
+                  </div>
+                  <div className="flex items-center text-gray-600">
+                    <MapPin className="w-4 h-4 mr-1" />
+                    <span>{exp.location}</span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-gray-600 mb-4">{exp.description}</p>
+              <div className="mb-4">
+                <h4 className="text-md font-semibold mb-2">Key Achievements</h4>
+                <div className="space-y-2">
+                  {exp.achievements.map((achievement, i) => (
+                    <div key={i} className="flex items-start">
+                      <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-2" />
+                      <p className="text-gray-700 text-sm">{achievement}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="relative min-h-[600px] flex items-center">
         {/* Navigation Arrows */}
         <button
-          onClick={() => rotateExperiences('left')}
+          onClick={(e) => {
+            e.preventDefault();
+            rotateExperiences('left');
+          }}
           className="absolute left-0 z-10 p-2 bg-white rounded-full shadow-lg hover:bg-gray-50"
           disabled={isAnimating}
+          aria-label="Previous experience"
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
-        
+
         <button
-          onClick={() => rotateExperiences('right')}
+          onClick={(e) => {
+            e.preventDefault();
+            rotateExperiences('right');
+          }}
           className="absolute right-0 z-10 p-2 bg-white rounded-full shadow-lg hover:bg-gray-50"
           disabled={isAnimating}
+          aria-label="Next experience"
         >
           <ChevronRight className="w-6 h-6" />
         </button>
 
         {/* Experience Cards */}
         <div className="w-full overflow-hidden">
-          <div className="flex transition-transform duration-500 ease-in-out"
-               style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
+          <div
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+            onTransitionEnd={() => {
+              if (isMounted.current && isAnimating) {
+                setIsAnimating(false);
+              }
+            }}>
             {experiences.map((exp, index) => (
               <div
                 key={index}
@@ -164,7 +286,7 @@ const ExperienceCarousel = () => {
                         ))}
                       </div>
                     </div>
-                    
+
                     <div className="p-4 bg-purple-50 rounded-lg">
                       <div className="flex items-center mb-3">
                         <Code className="w-5 h-5 text-purple-600 mr-2" />
@@ -176,7 +298,7 @@ const ExperienceCarousel = () => {
                         ))}
                       </div>
                     </div>
-                    
+
                     <div className="p-4 bg-green-50 rounded-lg">
                       <div className="flex items-center mb-3">
                         <Database className="w-5 h-5 text-green-600 mr-2" />
@@ -194,19 +316,36 @@ const ExperienceCarousel = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div>)}
 
-      {/* Navigation Dots */}
-      <div className="flex justify-center space-x-2 mt-8">
-        {experiences.map((_, index) => (
+      {!useFallback && (
+        <div className="flex justify-center space-x-2 mt-8">
+          {experiences.map((_, index) => (
+            <button
+              key={index}
+              onClick={(e) => {
+                e.preventDefault();
+                if (!isAnimating) setActiveIndex(index);
+              }}
+              className={`w-3 h-3 rounded-full transition-all duration-300
+                ${index === activeIndex ? 'bg-blue-600 w-6' : 'bg-gray-300 hover:bg-gray-400'}`}
+              aria-label={`Go to experience ${index + 1}`}
+              disabled={isAnimating}
+            />
+          ))}
+        </div>
+      )}
+
+      {useFallback && (
+        <div className="text-center mt-4">
           <button
-            key={index}
-            onClick={() => setActiveIndex(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300
-              ${index === activeIndex ? 'bg-blue-600 w-6' : 'bg-gray-300 hover:bg-gray-400'}`}
-          />
-        ))}
-      </div>
+            onClick={() => setUseFallback(false)}
+            className="text-blue-600 hover:text-blue-800 underline text-sm"
+          >
+            Try Interactive View
+          </button>
+        </div>
+      )}
     </div>
   );
 };
