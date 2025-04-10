@@ -4,9 +4,12 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Remove assetPrefix and basePath for local development
+  // GitHub Pages configuration for user/organization site (username.github.io)
+  // For user/organization sites, leave basePath empty
   assetPrefix: '',
   basePath: '',
+  // This ensures proper URL handling
+  trailingSlash: true,
 }
 
 module.exports = nextConfig

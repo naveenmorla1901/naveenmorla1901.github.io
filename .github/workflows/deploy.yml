@@ -1,8 +1,9 @@
 name: Deploy to GitHub Pages
 
+# This workflow is disabled to avoid conflicts with nextjs.yml
 on:
-  push:
-    branches: [main]
+  # push:
+  #   branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -17,7 +18,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
