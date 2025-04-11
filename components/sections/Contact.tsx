@@ -1,28 +1,78 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Mail, Linkedin, Github, MapPin, Send, Calendar, Code, Brain, MessageCircle } from 'lucide-react';
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitError('');
+
+    try {
+      // Create mailto URL with form data
+      const mailtoUrl = `mailto:naveen.morla04@gmail.com?subject=${encodeURIComponent(formData.subject || 'Contact from Portfolio')}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+
+      // Open the mailto link
+      window.open(mailtoUrl, '_blank');
+
+      // Show success message
+      setSubmitSuccess(true);
+
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+        setSubmitSuccess(false);
+      }, 3000);
+    } catch (error) {
+      setSubmitError('There was an error sending your message. Please try again or email me directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="max-w-4xl mx-auto">
       <h2 className="text-3xl font-bold text-center mb-12">Let's Connect</h2>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* Contact Information Section */}
         <div className="space-y-8">
           <div>
             <h3 className="text-2xl font-semibold mb-4">Get in Touch</h3>
             <p className="text-gray-600 mb-6">
-              I'm always excited to connect with fellow data scientists, engineers, and technology enthusiasts. 
-              Whether you want to discuss potential collaborations, AI/ML projects, or explore innovative ideas 
+              I'm always excited to connect with fellow data scientists, engineers, and technology enthusiasts.
+              Whether you want to discuss potential collaborations, AI/ML projects, or explore innovative ideas
               in data science, I'd love to hear from you!
             </p>
           </div>
 
           {/* Contact Links with Enhanced Interactivity */}
           <div className="space-y-4">
-            <a 
+            <a
               href="mailto:naveen.morla04@gmail.com"
               className="flex items-center space-x-3 text-gray-600 hover:text-blue-600 transition-colors p-3 rounded-lg hover:bg-blue-50"
             >
@@ -30,7 +80,7 @@ export default function Contact() {
               <span>naveen.morla04@gmail.com</span>
             </a>
 
-            <a 
+            <a
               href="https://www.linkedin.com/in/naveen-morla/"
               target="_blank"
               rel="noopener noreferrer"
@@ -40,7 +90,7 @@ export default function Contact() {
               <span>Connect on LinkedIn</span>
             </a>
 
-            <a 
+            <a
               href="https://github.com/naveenmorla1901"
               target="_blank"
               rel="noopener noreferrer"
@@ -67,7 +117,7 @@ export default function Contact() {
                   <p className="text-sm text-gray-600">Exploring cutting-edge machine learning solutions and LLM applications</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start">
                 <Code className="w-5 h-5 text-blue-600 mr-3 mt-1" />
                 <div>
@@ -75,7 +125,7 @@ export default function Contact() {
                   <p className="text-sm text-gray-600">Contributing to and developing impactful open source projects</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start">
                 <MessageCircle className="w-5 h-5 text-blue-600 mr-3 mt-1" />
                 <div>
@@ -108,7 +158,7 @@ export default function Contact() {
 
         {/* Enhanced Contact Form */}
         <div>
-          <form className="bg-white p-6 rounded-lg shadow-md">
+          <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md">
             <div className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
@@ -118,8 +168,11 @@ export default function Contact() {
                   type="text"
                   id="name"
                   name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Your Name"
+                  required
                 />
               </div>
 
@@ -131,8 +184,11 @@ export default function Contact() {
                   type="email"
                   id="email"
                   name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                   placeholder="your.email@example.com"
+                  required
                 />
               </div>
 
@@ -144,6 +200,8 @@ export default function Contact() {
                   type="text"
                   id="subject"
                   name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                   placeholder="What would you like to discuss?"
                 />
@@ -156,19 +214,43 @@ export default function Contact() {
                 <textarea
                   id="message"
                   name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   rows={6}
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Share your thoughts, ideas, or questions..."
+                  required
                 />
               </div>
+
+              {submitSuccess && (
+                <div className="p-3 bg-green-100 text-green-700 rounded-md">
+                  Your message has been sent successfully! I'll get back to you soon.
+                </div>
+              )}
+
+              {submitError && (
+                <div className="p-3 bg-red-100 text-red-700 rounded-md">
+                  {submitError}
+                </div>
+              )}
 
               <div>
                 <button
                   type="submit"
-                  className="w-full flex justify-center items-center px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
+                  disabled={isSubmitting}
+                  className="w-full flex justify-center items-center px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors disabled:bg-blue-400 disabled:cursor-not-allowed"
                 >
-                  <Send className="w-5 h-5 mr-2" />
-                  Send Message
+                  {isSubmitting ? (
+                    <>
+                      <span className="animate-pulse">Sending...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-5 h-5 mr-2" />
+                      Send Message
+                    </>
+                  )}
                 </button>
                 <p className="text-sm text-gray-500 mt-2 text-center">
                   I typically respond within 24-48 hours

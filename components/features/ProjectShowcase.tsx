@@ -110,7 +110,7 @@ const ProjectShowcase = () => {
   return (
     <div className="space-y-16">
       {/* Main Featured Projects */}
-      <div className="grid lg:grid-cols-2 gap-8">
+      <div className="grid lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
           <div
             key={index}
@@ -129,27 +129,14 @@ const ProjectShowcase = () => {
 
               <p className="text-gray-600 mb-6">{project.description}</p>
 
-              {/* Key Highlights */}
+              {/* Key Highlights - Simplified for 3-column layout */}
               <div className="mb-6">
                 <h4 className="font-semibold text-gray-700 mb-3">Key Highlights</h4>
                 <div className="space-y-2">
-                  {project.highlights.map((highlight, idx) => (
+                  {project.highlights.slice(0, 3).map((highlight, idx) => (
                     <div key={idx} className="flex items-start gap-2">
                       <div className="w-2 h-2 mt-2 bg-blue-600 rounded-full"></div>
-                      <span className="text-gray-600">{highlight}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Technical Details */}
-              <div className="mb-6">
-                <h4 className="font-semibold text-gray-700 mb-3">Technical Implementation</h4>
-                <div className="space-y-2">
-                  {project.technical.map((detail, idx) => (
-                    <div key={idx} className="flex items-start gap-2">
-                      <Code className="w-4 h-4 mt-1 text-blue-600" />
-                      <span className="text-gray-600">{detail}</span>
+                      <span className="text-gray-600 text-sm">{highlight}</span>
                     </div>
                   ))}
                 </div>
