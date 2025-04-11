@@ -31,31 +31,39 @@ export default function Contact() {
       // Create mailto URL with form data
       const mailtoUrl = `mailto:naveen.morla04@gmail.com?subject=${encodeURIComponent(formData.subject || 'Contact from Portfolio')}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
 
-      // Open the mailto link
-      window.open(mailtoUrl, '_blank');
+      // Try to open the mailto link
+      const mailtoWindow = window.open(mailtoUrl, '_blank');
 
-      // Show success message
-      setSubmitSuccess(true);
+      // Check if the window was blocked or failed to open
+      if (!mailtoWindow || mailtoWindow.closed || typeof mailtoWindow.closed === 'undefined') {
+        // Fallback: Copy email address to clipboard
+        await navigator.clipboard.writeText('naveen.morla04@gmail.com');
+        setSubmitSuccess(true);
+        setSubmitError('Email client could not be opened. The email address has been copied to your clipboard.');
+      } else {
+        // Show success message
+        setSubmitSuccess(true);
 
-      // Reset form after 3 seconds
-      setTimeout(() => {
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
-        });
-        setSubmitSuccess(false);
-      }, 3000);
+        // Reset form after success
+        setTimeout(() => {
+          setFormData({
+            name: '',
+            email: '',
+            subject: '',
+            message: ''
+          });
+          setSubmitSuccess(false);
+        }, 3000);
+      }
     } catch (error) {
-      setSubmitError('There was an error sending your message. Please try again or email me directly.');
+      setSubmitError('There was an error sending your message. Please email me directly at naveen.morla04@gmail.com');
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="max-w-[1440px] mx-auto w-full">
       <h2 className="text-3xl font-bold text-center mb-12">Let's Connect</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">

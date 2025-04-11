@@ -95,7 +95,7 @@ const MainLayout = () => {
       </section>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4">
+      <main className="max-w-[1440px] mx-auto px-4 w-full">
         {/* Professional Journey */}
         <section id="experience" className="py-20 bg-gradient-to-b from-gray-50 to-white transition-colors duration-300">
           <ExperienceCarousel />

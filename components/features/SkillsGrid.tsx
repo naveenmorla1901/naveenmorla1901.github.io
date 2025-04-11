@@ -87,7 +87,7 @@ const skillCategories = [
 
 const SkillsGrid = () => {
   return (
-    <div className="space-y-12">
+    <div className="space-y-12 max-w-[1440px] mx-auto w-full">
       <div className="text-center max-w-3xl mx-auto">
         <h2 className="text-3xl font-bold mb-4">Technical Expertise</h2>
         <p className="text-gray-600">

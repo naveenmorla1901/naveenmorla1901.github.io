@@ -99,7 +99,7 @@ const PersonalBrand: React.FC = () => {
             Contact Me
           </button>
           <a
-            href="Naveen_morla_Resume.pdf"
+            href="/Naveen_morla_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"

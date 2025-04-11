@@ -110,13 +110,13 @@ const ProjectShowcase = () => {
   return (
     <div className="space-y-16">
       {/* Main Featured Projects */}
-      <div className="grid lg:grid-cols-3 gap-8">
+      <div className="grid lg:grid-cols-3 gap-8 w-full">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
+            className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full"
           >
-            <div className="p-6">
+            <div className="p-6 flex-grow">
               <div className="flex items-center gap-3 mb-4">
                 {React.createElement(project.icon, { className: "w-6 h-6 text-blue-600" })}
                 <div>
@@ -127,7 +127,7 @@ const ProjectShowcase = () => {
                 </div>
               </div>
 
-              <p className="text-gray-600 mb-6">{project.description}</p>
+              <p className="text-gray-600 mb-6 line-clamp-4 text-sm">{project.description}</p>
 
               {/* Key Highlights - Simplified for 3-column layout */}
               <div className="mb-6">
@@ -154,18 +154,18 @@ const ProjectShowcase = () => {
                 ))}
               </div>
 
-              {/* Links */}
-              <div className="flex gap-4">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-gray-600 hover:text-blue-600 transition-colors"
-                >
-                  <Github className="w-5 h-5 mr-2" />
-                  <span>View Code</span>
-                </a>
-              </div>
+            </div>
+            {/* Links */}
+            <div className="bg-gray-50 p-4 border-t border-gray-100 mt-auto">
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-gray-600 hover:text-blue-600 transition-colors"
+              >
+                <Github className="w-5 h-5 mr-2" />
+                <span>View Code</span>
+              </a>
             </div>
           </div>
         ))}
