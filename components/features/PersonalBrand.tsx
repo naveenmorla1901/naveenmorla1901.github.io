@@ -37,37 +37,37 @@ const PersonalBrand: React.FC = () => {
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900">
       <div className="relative z-10 text-white text-center max-w-5xl mx-auto px-4">
         {/* Icon Grid */}
-        <div className="mb-8 flex justify-center space-x-4">
+        <div className="mb-6 sm:mb-8 flex flex-wrap justify-center gap-2 sm:gap-4">
           {[Brain, Code, Database, Globe, Server, LineChart].map((Icon, index) => (
             <div
               key={index}
-              className="w-16 h-16 bg-white bg-opacity-10 rounded-xl flex items-center justify-center transform hover:scale-110 transition-transform duration-300 hover:rotate-6"
+              className="w-12 h-12 sm:w-14 md:w-16 sm:h-14 md:h-16 bg-white bg-opacity-10 rounded-xl flex items-center justify-center transform hover:scale-110 transition-transform duration-300 hover:rotate-6"
             >
-              <Icon className="w-8 h-8" />
+              <Icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
             </div>
           ))}
         </div>
 
         {/* Main Title */}
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 animate-fadeIn">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 animate-fadeIn">
           Naveen Morla
         </h1>
 
-        <div className="text-2xl md:text-3xl mb-8 opacity-90">
+        <div className="text-xl sm:text-2xl md:text-3xl mb-4 sm:mb-8 opacity-90 px-2">
           Data Scientist & Software Engineer | THK Manufacturing of America
         </div>
 
-        <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-80">
+        <p className="text-base sm:text-xl md:text-2xl mb-6 sm:mb-8 max-w-3xl mx-auto opacity-80 px-2">
           RAG & LLM Integration | Full-Stack Development | Manufacturing Data Analytics | Master's in Data Science
         </p>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          <span className="px-4 py-2 bg-white bg-opacity-10 rounded-full text-sm md:text-base">Large Language Models</span>
-          <span className="px-4 py-2 bg-white bg-opacity-10 rounded-full text-sm md:text-base">Web Scraping</span>
-          <span className="px-4 py-2 bg-white bg-opacity-10 rounded-full text-sm md:text-base">Data Engineering</span>
-          <span className="px-4 py-2 bg-white bg-opacity-10 rounded-full text-sm md:text-base">FastAPI</span>
-          <span className="px-4 py-2 bg-white bg-opacity-10 rounded-full text-sm md:text-base">Python</span>
-          <span className="px-4 py-2 bg-white bg-opacity-10 rounded-full text-sm md:text-base">Machine Learning</span>
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mb-8 sm:mb-12">
+          <span className="px-2 sm:px-3 md:px-4 py-1 sm:py-2 bg-white bg-opacity-10 rounded-full text-xs sm:text-sm md:text-base">Large Language Models</span>
+          <span className="px-2 sm:px-3 md:px-4 py-1 sm:py-2 bg-white bg-opacity-10 rounded-full text-xs sm:text-sm md:text-base">Web Scraping</span>
+          <span className="px-2 sm:px-3 md:px-4 py-1 sm:py-2 bg-white bg-opacity-10 rounded-full text-xs sm:text-sm md:text-base">Data Engineering</span>
+          <span className="px-2 sm:px-3 md:px-4 py-1 sm:py-2 bg-white bg-opacity-10 rounded-full text-xs sm:text-sm md:text-base">FastAPI</span>
+          <span className="px-2 sm:px-3 md:px-4 py-1 sm:py-2 bg-white bg-opacity-10 rounded-full text-xs sm:text-sm md:text-base">Python</span>
+          <span className="px-2 sm:px-3 md:px-4 py-1 sm:py-2 bg-white bg-opacity-10 rounded-full text-xs sm:text-sm md:text-base">Machine Learning</span>
         </div>
 
         {/* Achievements Grid */}
@@ -85,16 +85,16 @@ const PersonalBrand: React.FC = () => {
         </div>
 
         {/* Call to Action Buttons */}
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
           <button
             onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-            className="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+            className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-sm sm:text-base"
           >
             View Projects
           </button>
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="px-8 py-3 bg-white bg-opacity-10 hover:bg-opacity-20 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+            className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 bg-white bg-opacity-10 hover:bg-opacity-20 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-sm sm:text-base"
           >
             Contact Me
           </button>
@@ -102,7 +102,7 @@ const PersonalBrand: React.FC = () => {
             href="/Naveen_morla_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+            className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-sm sm:text-base"
           >
             Download Resume
           </a>

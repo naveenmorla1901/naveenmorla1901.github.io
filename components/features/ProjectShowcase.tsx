@@ -110,18 +110,18 @@ const ProjectShowcase = () => {
   return (
     <div className="space-y-16">
       {/* Main Featured Projects */}
-      <div className="grid lg:grid-cols-3 gap-8 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 w-full">
         {projects.map((project, index) => (
           <div
             key={index}
             className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full"
           >
             <div className="p-6 flex-grow">
-              <div className="flex items-center gap-3 mb-4">
-                {React.createElement(project.icon, { className: "w-6 h-6 text-blue-600" })}
+              <div className="flex items-start sm:items-center gap-3 mb-4">
+                {React.createElement(project.icon, { className: "w-6 h-6 text-blue-600 flex-shrink-0 mt-1 sm:mt-0" })}
                 <div>
-                  <h3 className="text-xl font-bold">{project.title}</h3>
-                  <span className="inline-block px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">
+                  <h3 className="text-lg sm:text-xl font-bold">{project.title}</h3>
+                  <span className="inline-block px-2 sm:px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs sm:text-sm">
                     {project.category}
                   </span>
                 </div>
@@ -143,11 +143,11 @@ const ProjectShowcase = () => {
               </div>
 
               {/* Technologies */}
-              <div className="flex flex-wrap gap-2 mb-6">
+              <div className="flex flex-wrap gap-1 sm:gap-2 mb-6">
                 {project.technologies.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm"
+                    className="px-2 sm:px-3 py-0.5 sm:py-1 bg-blue-50 text-blue-600 rounded-full text-xs sm:text-sm"
                   >
                     {tech}
                   </span>
@@ -156,14 +156,14 @@ const ProjectShowcase = () => {
 
             </div>
             {/* Links */}
-            <div className="bg-gray-50 p-4 border-t border-gray-100 mt-auto">
+            <div className="bg-gray-50 p-3 sm:p-4 border-t border-gray-100 mt-auto">
               <a
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-gray-600 hover:text-blue-600 transition-colors"
+                className="inline-flex items-center text-gray-600 hover:text-blue-600 transition-colors text-sm sm:text-base"
               >
-                <Github className="w-5 h-5 mr-2" />
+                <Github className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 sm:mr-2" />
                 <span>View Code</span>
               </a>
             </div>
@@ -173,20 +173,20 @@ const ProjectShowcase = () => {
 
       {/* Other Projects Grid */}
       <div>
-        <div className="flex items-center justify-between mb-8">
-          <h3 className="text-2xl font-semibold">Other Notable Projects</h3>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-6 sm:mb-8">
+          <h3 className="text-xl sm:text-2xl font-semibold">Other Notable Projects</h3>
           <a
             href="https://github.com/naveenmorla1901"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center text-blue-600 hover:text-blue-700 transition-colors"
+            className="flex items-center text-blue-600 hover:text-blue-700 transition-colors text-sm sm:text-base"
           >
             <span>View All Projects</span>
-            <ArrowRight className="w-4 h-4 ml-2" />
+            <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2" />
           </a>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {otherProjects.map((project, index) => (
             <div
               key={index}

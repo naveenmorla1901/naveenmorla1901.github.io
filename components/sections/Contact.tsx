@@ -64,13 +64,13 @@ export default function Contact() {
 
   return (
     <div className="max-w-[1440px] mx-auto w-full">
-      <h2 className="text-3xl font-bold text-center mb-12">Let's Connect</h2>
+      <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">Let's Connect</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
         {/* Contact Information Section */}
         <div className="space-y-8">
           <div>
-            <h3 className="text-2xl font-semibold mb-4">Get in Touch</h3>
+            <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">Get in Touch</h3>
             <p className="text-gray-600 mb-6">
               I'm always excited to connect with fellow data scientists, engineers, and technology enthusiasts.
               Whether you want to discuss potential collaborations, AI/ML projects, or explore innovative ideas
@@ -82,19 +82,19 @@ export default function Contact() {
           <div className="space-y-4">
             <a
               href="mailto:naveen.morla04@gmail.com"
-              className="flex items-center space-x-3 text-gray-600 hover:text-blue-600 transition-colors p-3 rounded-lg hover:bg-blue-50"
+              className="flex items-center space-x-2 sm:space-x-3 text-gray-600 hover:text-blue-600 transition-colors p-2 sm:p-3 rounded-lg hover:bg-blue-50 text-sm sm:text-base"
             >
-              <Mail className="w-5 h-5" />
-              <span>naveen.morla04@gmail.com</span>
+              <Mail className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+              <span className="break-all">naveen.morla04@gmail.com</span>
             </a>
 
             <a
               href="https://www.linkedin.com/in/naveen-morla/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-3 text-gray-600 hover:text-blue-600 transition-colors p-3 rounded-lg hover:bg-blue-50"
+              className="flex items-center space-x-2 sm:space-x-3 text-gray-600 hover:text-blue-600 transition-colors p-2 sm:p-3 rounded-lg hover:bg-blue-50 text-sm sm:text-base"
             >
-              <Linkedin className="w-5 h-5" />
+              <Linkedin className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
               <span>Connect on LinkedIn</span>
             </a>
 
@@ -102,14 +102,14 @@ export default function Contact() {
               href="https://github.com/naveenmorla1901"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-3 text-gray-600 hover:text-blue-600 transition-colors p-3 rounded-lg hover:bg-blue-50"
+              className="flex items-center space-x-2 sm:space-x-3 text-gray-600 hover:text-blue-600 transition-colors p-2 sm:p-3 rounded-lg hover:bg-blue-50 text-sm sm:text-base"
             >
-              <Github className="w-5 h-5" />
+              <Github className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
               <span>Follow on GitHub</span>
             </a>
 
-            <div className="flex items-center space-x-3 text-gray-600 p-3">
-              <MapPin className="w-5 h-5" />
+            <div className="flex items-center space-x-2 sm:space-x-3 text-gray-600 p-2 sm:p-3 text-sm sm:text-base">
+              <MapPin className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
               <span>Columbus, Ohio, United States</span>
             </div>
           </div>
