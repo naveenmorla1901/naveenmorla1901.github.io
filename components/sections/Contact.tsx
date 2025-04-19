@@ -1,9 +1,14 @@
 'use client';
 
-import React, { useState, ChangeEvent, FormEvent } from 'react';
+import React, { useState, ChangeEvent, FormEvent, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import { Mail, Linkedin, Github, MapPin, Send, Calendar, Code, Brain, MessageCircle } from 'lucide-react';
 
+// Initialize EmailJS with your User ID (this should be done in a useEffect in a real app)
+// emailjs.init("YOUR_USER_ID");
+
 export default function Contact() {
+  const form = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -28,19 +33,18 @@ export default function Contact() {
     setSubmitError('');
 
     try {
-      // Create mailto URL with form data
-      const mailtoUrl = `mailto:naveen.morla04@gmail.com?subject=${encodeURIComponent(formData.subject || 'Contact from Portfolio')}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+      if (!form.current) throw new Error('Form not found');
 
-      // Try to open the mailto link
-      const mailtoWindow = window.open(mailtoUrl, '_blank');
+      // Send the email using EmailJS
+      // Replace these with your actual EmailJS service ID, template ID, and user ID
+      const result = await emailjs.sendForm(
+        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        form.current,
+        'YOUR_USER_ID' // Replace with your EmailJS user ID
+      );
 
-      // Check if the window was blocked or failed to open
-      if (!mailtoWindow || mailtoWindow.closed || typeof mailtoWindow.closed === 'undefined') {
-        // Fallback: Copy email address to clipboard
-        await navigator.clipboard.writeText('naveen.morla04@gmail.com');
-        setSubmitSuccess(true);
-        setSubmitError('Email client could not be opened. The email address has been copied to your clipboard.');
-      } else {
+      if (result.text === 'OK') {
         // Show success message
         setSubmitSuccess(true);
 
@@ -54,9 +58,16 @@ export default function Contact() {
           });
           setSubmitSuccess(false);
         }, 3000);
+      } else {
+        throw new Error('Email sending failed');
       }
     } catch (error) {
+      console.error('Form submission error:', error);
       setSubmitError('There was an error sending your message. Please email me directly at naveen.morla04@gmail.com');
+
+      // Fallback to mailto as a backup option
+      const mailtoUrl = `mailto:naveen.morla04@gmail.com?subject=${encodeURIComponent(formData.subject || 'Contact from Portfolio')}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+      window.open(mailtoUrl, '_blank');
     } finally {
       setIsSubmitting(false);
     }
@@ -166,7 +177,8 @@ export default function Contact() {
 
         {/* Enhanced Contact Form */}
         <div>
-          <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md">
+          <form ref={form} onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md">
+
             <div className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
