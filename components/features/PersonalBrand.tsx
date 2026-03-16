@@ -13,22 +13,22 @@ const achievements: AchievementProps[] = [
   {
     icon: Globe,
     title: "LLM & RAG Expert",
-    description: "Built intelligent systems using LangChain, vector databases, and fine-tuning LLMs"
+    description: "Built multi-provider AI architectures with Claude, Gemini, DeepSeek using LangChain and vector databases"
   },
   {
     icon: Brain,
-    title: "AI Applications",
-    description: "Developed dual-LLM architecture for natural language to web scraping conversion"
+    title: "Business Intelligence",
+    description: "Designed Power BI dashboards for 15+ stakeholders, forecasting case growth across 50,000+ cases"
   },
   {
     icon: Server,
     title: "Data Engineering",
-    description: "Created job market analytics system tracking 140+ corporate career sites hourly"
+    description: "Created FastAPI pipelines processing 1TB+ daily data via Azure Functions with end-to-end CI/CD"
   },
   {
     icon: LineChart,
     title: "ML Research",
-    description: "Implemented Graph Neural Networks for anomaly detection in time series data"
+    description: "Built Graph Neural Networks for anomaly detection and deep learning models for medical imaging"
   }
 ];
 
@@ -54,20 +54,20 @@ const PersonalBrand: React.FC = () => {
         </h1>
 
         <div className="text-xl sm:text-2xl md:text-3xl mb-4 sm:mb-8 opacity-90 px-2">
-          Data Scientist & Software Engineer | THK Manufacturing of America
+          Data Scientist & Business Intelligence | The Lisinski Law Firm
         </div>
 
         <p className="text-base sm:text-xl md:text-2xl mb-6 sm:mb-8 max-w-3xl mx-auto opacity-80 px-2">
-          RAG & LLM Integration | Full-Stack Development | Manufacturing Data Analytics | Master's in Data Science
+          5+ Years | LLM & RAG Systems | Analytics & Forecasting | MLOps & Cloud Infrastructure | Master's in Data Science
         </p>
 
         <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mb-8 sm:mb-12">
           <span className="px-2 sm:px-3 md:px-4 py-1 sm:py-2 bg-white bg-opacity-10 rounded-full text-xs sm:text-sm md:text-base">Large Language Models</span>
-          <span className="px-2 sm:px-3 md:px-4 py-1 sm:py-2 bg-white bg-opacity-10 rounded-full text-xs sm:text-sm md:text-base">Web Scraping</span>
-          <span className="px-2 sm:px-3 md:px-4 py-1 sm:py-2 bg-white bg-opacity-10 rounded-full text-xs sm:text-sm md:text-base">Data Engineering</span>
+          <span className="px-2 sm:px-3 md:px-4 py-1 sm:py-2 bg-white bg-opacity-10 rounded-full text-xs sm:text-sm md:text-base">RAG Systems</span>
           <span className="px-2 sm:px-3 md:px-4 py-1 sm:py-2 bg-white bg-opacity-10 rounded-full text-xs sm:text-sm md:text-base">FastAPI</span>
-          <span className="px-2 sm:px-3 md:px-4 py-1 sm:py-2 bg-white bg-opacity-10 rounded-full text-xs sm:text-sm md:text-base">Python</span>
-          <span className="px-2 sm:px-3 md:px-4 py-1 sm:py-2 bg-white bg-opacity-10 rounded-full text-xs sm:text-sm md:text-base">Machine Learning</span>
+          <span className="px-2 sm:px-3 md:px-4 py-1 sm:py-2 bg-white bg-opacity-10 rounded-full text-xs sm:text-sm md:text-base">Azure Cloud</span>
+          <span className="px-2 sm:px-3 md:px-4 py-1 sm:py-2 bg-white bg-opacity-10 rounded-full text-xs sm:text-sm md:text-base">Power BI</span>
+          <span className="px-2 sm:px-3 md:px-4 py-1 sm:py-2 bg-white bg-opacity-10 rounded-full text-xs sm:text-sm md:text-base">MLOps</span>
         </div>
 
         {/* Achievements Grid */}
