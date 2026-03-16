@@ -75,20 +75,20 @@ export default function About() {
                 <li>CI/CD pipelines (GitHub Actions)</li>
                 <li>Azure Functions & serverless</li>
                 <li>FastAPI production deployments</li>
-                <5+ years of experience spanning data analysis, machine learning, and AI engineering, I've progressed from traditional data analysis
-            to architecting production LLM systems and autonomous agents. I hold a Master's in Data Science from Bowling Green State University
-            and have driven significant impact across multiple domains: optimizing manufacturing operations (18% lead-time improvement, 1TB+ daily data),
-            enhancing legal tech analytics (50,000+ cases), and revolutionizing hiring processes (30% efficiency gain, 10,000+ resumes). Currently focused on
-            building intelligent document processing systems and leveraging multi-provider LLMs (Claude, Gemini, DeepSeek) for enterprise solution
+                <li>Real-time analytics systems</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-lg">
           <h3 className="text-xl font-semibold mb-4">Professional Journey</h3>
           <p className="text-gray-700 leading-relaxed">
-            With over 4 years of experience in machine learning and data analysis, I've progressed from data analysis
-            to advanced AI application development. I hold a Master's in Data Science from Bowling Green State University
-            and have worked on diverse projects from developing intelligent loan document processing systems to creating
-            autonomous web scraping platforms. I'm particularly interested in the LLM and RAG revolution, architecting
-            retrieval-augmented systems and experimenting with autonomous AI agents for automating complex workflows.
+            With 5+ years of experience spanning data analysis, machine learning, and AI engineering, I've progressed from traditional data analysis
+            to architecting production LLM systems and autonomous agents. I hold a Master's in Data Science from Bowling Green State University
+            and have driven significant impact across multiple domains: optimizing manufacturing operations (18% lead-time improvement, 1TB+ daily data),
+            enhancing legal tech analytics (50,000+ cases), and revolutionizing hiring processes (30% efficiency gain, 10,000+ resumes). Currently focused on
+            building intelligent document processing systems and leveraging multi-provider LLMs (Claude, Gemini, DeepSeek) for enterprise solutions.
           </p>
         </div>
       </div>
