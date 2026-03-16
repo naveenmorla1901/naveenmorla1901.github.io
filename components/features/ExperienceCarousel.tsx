@@ -13,22 +13,41 @@ import {
 
 const experiences = [
   {
-    period: "Feb 2024 - Present",
+    period: "June 2025 - Present",
+    company: "The Lisinski Law Firm, LLC",
+    role: "Data Scientist & Business Intelligence",
+    location: "Remote",
+    description: "Developing advanced analytics solutions to predict case growth and drive data-driven decision-making across 50,000+ active cases.",
+    achievements: [
+      "Developed predictive models using advanced ML techniques to forecast case growth and business development trends, enabling strategic planning and informed business decisions.",
+      "Conducted sentiment analysis on client and case data using LLM models to identify key themes and insights for business development strategies and client experience improvements.",
+      "Designed and maintained interactive Power BI dashboards visualizing KPIs, case metrics, and business performance for 15+ leadership stakeholders enabling data-driven decision-making.",
+      "Engineered high-performance FastAPI endpoints with optimized response times and deployed scalable data pipelines using Azure Functions for automated reporting and real-time analytics.",
+      "Designed and implemented end-to-end CI/CD pipelines for automated deployment of data science models and APIs to Azure, streamlining release cycles and ensuring reliable deployments."
+    ],
+    focus: {
+      ai: ["LLMs", "Sentiment Analysis", "Forecasting"],
+      engineering: ["FastAPI", "Azure Functions", "CI/CD"],
+      analytics: ["Power BI", "Case Analytics", "KPI Tracking"]
+    }
+  },
+  {
+    period: "Jan 2024 - Jun 2025",
     company: "THK Manufacturing of America",
     role: "Data Scientist & Software Engineer",
     location: "Columbus, Ohio",
-    description: "Leading data science initiatives to optimize manufacturing processes through advanced ML solutions.",
+    description: "Led data science initiatives to optimize manufacturing processes through advanced ML solutions handling 1TB+ daily data.",
     achievements: [
-      "Engineered high-performance APIs using FastAPI with advanced caching for seamless data ingestion, processing, and retrieval of machine and inventory datasets, and developed and fine-tuned predictive models with PyTorch and TensorFlow to enhance lead time forecasting and optimizing inventory management.",
-      "Executed comprehensive data preprocessing, feature engineering, and data wrangling to improve model accuracy and robustness, leveraged Polars and PySpark for accelerated data processing, ensuring efficient handling of large datasets.",
-      "Architected and managed containerized microservices with Kubernetes and Docker for scalable big data processing pipelines, implementing MLOps practices to streamline the deployment and monitoring of machine learning models. ",
-      "Created dynamic data visualizations using Tableau for data-driven decision-making and developed responsive frontend interfaces with React and JavaScript to enhance user experience and data visualization.",
-      "Utilized SQL for complex backend data management and querying, implemented Git version control, and established CI/CD pipelines for streamlined code management, automated testing, and continuous deployment. "
+      "Engineered high-performance APIs using FastAPI with advanced caching for seamless data ingestion, processing, and retrieval of machine and inventory datasets; fine-tuned predictive models with PyTorch and TensorFlow improving lead-time forecasting by 18% and optimizing inventory across 5,000+ SKUs.",
+      "Executed comprehensive data preprocessing, feature engineering, and data wrangling to improve model accuracy and robustness; leveraged Polars and PySpark for accelerated data processing, ensuring efficient handling of large datasets.",
+      "Architected and managed containerized microservices with Kubernetes and Docker for scalable big data processing pipelines handling 1TB+ daily manufacturing data, implementing MLOps practices for model deployment and monitoring.",
+      "Created dynamic data visualizations using Tableau for data-driven decision-making and developed responsive frontend interfaces with React and JavaScript to enhance user experience.",
+      "Utilized SQL for complex backend data management and querying, implemented Git version control, and established CI/CD pipelines for streamlined code management, automated testing, and continuous deployment."
     ],
     focus: {
-      ai: ["PyTorch", "TensorFlow", "NLP Models"],
+      ai: ["PyTorch", "TensorFlow", "Predictive Modeling"],
       engineering: ["FastAPI", "Kubernetes", "PostgreSQL"],
-      analytics: ["Real-time Dashboards", "Predictive Analytics"]
+      analytics: ["Tableau", "Manufacturing Analytics", "MLOps"]
     }
   },
   {
@@ -38,32 +57,32 @@ const experiences = [
     location: "India",
     description: "Led AI-powered solutions for talent acquisition and data analysis.",
     achievements: [
-      "Utilized Python, and deep learning libraries to design resume parsing techniques to build a Talent Acquisition Management System (TAMS). Developed advanced AI features with 30% more efficiency in the hiring process. ",
-      "Engineered an automated hiring process and facilitated its deployment using AWS Sagemaker. Collect 10,000+ resumes and label them atomically and manually for the training data, using libraries like NLTK, NLP, and Spacy to analyze data.",
-      "Normalizing SQL databases, improving data handling and system performance by 2X. Coordinated with cross-functional teams throughout the development and deployment process, following Agile methodologies. ",
-      "Applied strong analytical skills and creativity in data mining and defining essential KPIs/metrics. Communicated complex data points in a comprehensible manner to stakeholders using Power BI. Fostered lasting relationships, ensuring smooth project execution, stakeholder satisfaction, and participation in code review."
+      "Utilized Python and deep learning libraries to design resume parsing techniques for the Talent Acquisition Management System (TAMS), achieving 30% improvement in hiring process efficiency.",
+      "Engineered automated hiring process using AWS SageMaker, collected and labeled 10,000+ resumes manually and automatically using NLTK, NLP, and Spacy for training data preparation.",
+      "Normalized SQL databases improving data handling and system performance by 2X. Coordinated with cross-functional teams throughout development and deployment, following Agile methodologies.",
+      "Applied analytical skills in data mining and KPI definition, communicated complex data points to stakeholders using Power BI, ensured smooth project execution and stakeholder satisfaction."
     ],
     focus: {
-      ai: ["NLP", "BERT Models", "Deep Learning"],
-      engineering: ["AWS", "SQL", "Python"],
-      analytics: ["Power BI", "Statistical Analysis"]
+      ai: ["NLP", "Deep Learning", "Resume Parsing"],
+      engineering: ["AWS SageMaker", "SQL", "Python"],
+      analytics: ["Power BI", "Hiring Analytics"]
     }
   },
   {
     period: "March 2018 - February 2019",
-    company: "Knowledge Matrix",
+    company: "Knowledge Matrix Pvt Ltd",
     role: "Data Analyst",
     location: "India",
     description: "Focused on data analysis and visualization to drive business insights.",
     achievements: [
-      "Applied a structured data analysis workflow and built an ETL pipeline using tools like Python and SQL to gather, clean, and transform data, uncovering valuable insights for informed decision-making and saving 5+ hours for 10 million records. ",
-      "Utilized popular tools like Tableau and PowerBI to create visually appealing dashboards and reports, effectively presenting key findings to stakeholders and supporting strategic planning. ",
-      "Applied statistical techniques and data visualization to identify patterns, correlations, and anomalies, providing actionable insights and recommendations for process improvement and business growth."
+      "Built ETL pipelines using Python and SQL to gather, clean, and transform data, uncovering valuable insights and saving 5+ hours for processing 10 million records.",
+      "Created visually appealing Tableau and Power BI dashboards presenting key findings to stakeholders and supporting strategic planning.",
+      "Applied statistical techniques and data visualization to identify patterns, correlations, and anomalies, providing actionable insights for process improvement and business growth."
     ],
     focus: {
       ai: ["Statistical Models", "Predictive Analytics"],
       engineering: ["ETL Pipelines", "SQL", "Python"],
-      analytics: ["Tableau", "Business Intelligence"]
+      analytics: ["Tableau", "Power BI", "Business Intelligence"]
     }
   }
 ];
