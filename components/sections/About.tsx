@@ -11,10 +11,10 @@ export default function About() {
       <div className="prose prose-lg max-w-none">
         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-lg mb-8">
           <p className="text-lg leading-relaxed">
-            I'm a Data Scientist and Software Engineer at THK Manufacturing of America, specializing in creating high-performance APIs
-            with FastAPI and developing predictive models with PyTorch and TensorFlow to improve lead time forecasting
-            and inventory management. My expertise spans from machine learning and data engineering to full-stack development
-            and cloud infrastructure.
+            Results-driven Data Scientist with 5+ years of experience building end-to-end ML pipelines, LLM-powered applications, and scalable APIs.
+            Currently at The Lisinski Law Firm, I specialize in data analytics, business intelligence dashboards, and AI-driven case forecasting.
+            Deep expertise in RAG systems, MLOps, FastAPI, and multi-provider AI architectures (Claude, Gemini, DeepSeek) with production 
+            deployments on AWS and Azure. My career spans manufacturing optimization, legal tech analytics, and talent acquisition automation.
           </p>
         </div>
 
@@ -50,27 +50,36 @@ export default function About() {
 
         <div className="bg-white p-6 rounded-lg shadow-md mb-8">
           <h3 className="text-xl font-semibold mb-4">Current Focus Areas</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
-              <h4 className="font-semibold text-blue-600 mb-2">LLM & RAG Applications</h4>
+              <h4 className="font-semibold text-blue-600 mb-2">Business Intelligence & Analytics</h4>
               <ul className="list-disc list-inside text-gray-600 space-y-1">
-                <li>Enterprise document processing systems</li>
-                <li>Retrieval-augmented generation</li>
-                <li>Semantic search with vector databases</li>
-                <li>Multi-provider LLM integrations</li>
+                <li>Interactive Power BI dashboards</li>
+                <li>Case forecasting & growth analysis</li>
+                <li>Sentiment analysis on case data</li>
+                <li>KPI tracking for leadership</li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-blue-600 mb-2">Autonomous AI Agents</h4>
+              <h4 className="font-semibold text-blue-600 mb-2">LLM & RAG Systems</h4>
               <ul className="list-disc list-inside text-gray-600 space-y-1">
-                <li>Multi-step workflow automation</li>
-                <li>Natural language to code generation</li>
-                <li>Intelligent error recovery systems</li>
-                <li>Data validation and feedback loops</li>
+                <li>Multi-provider AI architectures</li>
+                <li>Enterprise document processing</li>
+                <li>Semantic search & retrieval</li>
+                <li>Sentiment analysis with LLMs</li>
               </ul>
             </div>
-          </div>
-        </div>
+            <div>
+              <h4 className="font-semibold text-blue-600 mb-2">MLOps & Cloud Infrastructure</h4>
+              <ul className="list-disc list-inside text-gray-600 space-y-1">
+                <li>CI/CD pipelines (GitHub Actions)</li>
+                <li>Azure Functions & serverless</li>
+                <li>FastAPI production deployments</li>
+                <5+ years of experience spanning data analysis, machine learning, and AI engineering, I've progressed from traditional data analysis
+            to architecting production LLM systems and autonomous agents. I hold a Master's in Data Science from Bowling Green State University
+            and have driven significant impact across multiple domains: optimizing manufacturing operations (18% lead-time improvement, 1TB+ daily data),
+            enhancing legal tech analytics (50,000+ cases), and revolutionizing hiring processes (30% efficiency gain, 10,000+ resumes). Currently focused on
+            building intelligent document processing systems and leveraging multi-provider LLMs (Claude, Gemini, DeepSeek) for enterprise solution
 
         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-lg">
           <h3 className="text-xl font-semibold mb-4">Professional Journey</h3>

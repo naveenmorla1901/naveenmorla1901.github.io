@@ -1,36 +1,84 @@
 'use client';
 
 import React from 'react';
-import { Calendar, MapPin, Briefcase, GraduationCap, Award, Code, Brain, Database, BookOpen } from 'lucide-react';
+import { Calendar, MapPin, Briefcase, GraduationCap, Award, Code, Brain, Database, BookOpen, BarChart } from 'lucide-react';
 
 // Comprehensive experience data structure including achievements and technologies
 const experiences = [
   {
-    title: "Data Scientist",
-    company: "THK Manufacturing of America",
-    location: "Columbus, Ohio",
-    period: "February 2024 - Present",
+    title: "Data Scientist, Business Intelligence",
+    company: "The Lisinski Law Firm, LLC",
+    location: "Remote",
+    period: "June 2025 - Present",
     type: "Full-time",
-    description: "Leading data science initiatives to optimize manufacturing processes and improve operational efficiency through advanced ML solutions.",
+    description: "Developing advanced analytics solutions to predict case growth, analyze immigration workflows, and drive data-driven decision-making across 50,000+ active cases.",
     achievements: [
       {
-        title: "API Development",
-        description: "Engineered high-performance APIs using FastAPI with advanced caching for seamless data ingestion, processing, and retrieval of sensor and inventory datasets",
-        icon: Code
-      },
-      {
-        title: "Predictive Modeling",
-        description: "Developed predictive models utilizing scikit-learn and TensorFlow, enhancing lead time forecasting and optimizing inventory management",
+        title: "Forecasting & Case Analytics",
+        description: "Developed predictive models using advanced ML techniques to forecast case growth and business development trends, enabling strategic planning",
         icon: Brain
       },
       {
-        title: "Data Infrastructure",
-        description: "Architected and managed containerized microservices with Kubernetes and Docker, ensuring scalable and efficient big data processing pipelines",
+        title: "Sentiment Analysis & Business Insights",
+        description: "Conducted sentiment analysis on client and case data using LLM models to identify key themes and insights for business development",
+        icon: Code
+      },
+      {
+        title: "Power BI Dashboard Development",
+        description: "Designed and maintained interactive Power BI dashboards visualizing KPIs, case metrics, and business performance for 15+ leadership stakeholders",
+        icon: Database
+      },
+      {
+        title: "FastAPI Backend & Azure Deployment",
+        description: "Engineered high-performance FastAPI endpoints with optimized response times and deployed scalable data pipelines using Azure Functions",
+        icon: Code
+      },
+      {
+        title: "CI/CD Pipeline Implementation",
+        description: "Designed end-to-end CI/CD pipelines for automated deployment of data science models and APIs to Azure, ensuring reliable deployments",
         icon: Database
       }
     ],
     technologies: [
-      "FastAPI", "PyTorch", "TensorFlow", "Kubernetes", "Docker", "PostgreSQL", "React", "Python", "Polars", "PySpark"
+      "FastAPI", "Azure Functions", "Power BI", "Python", "PostgreSQL", "LLMs", "Sentiment Analysis", "GitHub Actions", "CI/CD", "Machine Learning"
+    ]
+  },
+  {
+    title: "Data Scientist / Software Engineer",
+    company: "THK Manufacturing of America",
+    location: "Columbus, Ohio",
+    period: "Jan 2024 - Jun 2025",
+    type: "Full-time",
+    description: "Led data science initiatives to optimize manufacturing processes and improve operational efficiency through advanced ML solutions handling 1TB+ daily data.",
+    achievements: [
+      {
+        title: "API Development & Data Pipeline",
+        description: "Engineered high-performance APIs using FastAPI with advanced caching for seamless data ingestion, processing, and retrieval of machine and inventory datasets",
+        icon: Code
+      },
+      {
+        title: "Predictive Modeling & Accuracy Improvement",
+        description: "Developed predictive models with PyTorch and TensorFlow improving lead-time forecasting accuracy by 18% and optimizing inventory across 5,000+ SKUs",
+        icon: Brain
+      },
+      {
+        title: "Data Infrastructure & MLOps",
+        description: "Architected containerized microservices with Kubernetes and Docker handling 1TB+ daily manufacturing data, implementing MLOps practices for model deployment",
+        icon: Database
+      },
+      {
+        title: "Data Processing & Feature Engineering",
+        description: "Executed comprehensive data preprocessing and feature engineering using Polars and PySpark for accelerated large dataset processing",
+        icon: Code
+      },
+      {
+        title: "Data Visualization & Frontend Development",
+        description: "Created dynamic Tableau visualizations and responsive React/JavaScript interfaces for enhanced user experience and data-driven insights",
+        icon: Brain
+      }
+    ],
+    technologies: [
+      "FastAPI", "PyTorch", "TensorFlow", "Kubernetes", "Docker", "PostgreSQL", "React", "Python", "Polars", "PySpark", "Tableau", "JavaScript", "Git", "CI/CD"
     ]
   },
   {
@@ -39,54 +87,69 @@ const experiences = [
     location: "India",
     period: "May 2019 - April 2021",
     type: "Full-time",
-    description: "Led the development of AI-powered solutions for talent acquisition and data analysis, significantly improving hiring processes.",
+    description: "Led development of AI-powered talent acquisition solutions and data analysis platforms, achieving 30% improvement in hiring process efficiency.",
     achievements: [
       {
-        title: "Resume Parsing System",
-        description: "Developed a system using Python, deep learning, and Spark for the Talent Acquisition Management System, enhancing hiring efficiency by 30%",
+        title: "Resume Parsing System & Hiring Process",
+        description: "Utilized Python, deep learning, and Spark to design Talent Acquisition Management System (TAMS) with 30% hiring efficiency improvement",
         icon: Brain
       },
       {
-        title: "Database Optimization",
-        description: "Spearheaded the normalization of SQL databases, resulting in 40% reduction in query response times and improved data handling",
+        title: "Dataset Creation & Labeling",
+        description: "Collected and labeled 10,000+ resumes manually and automatically using NLTK, NLP, and Spacy for training data preparation",
+        icon: Code
+      },
+      {
+        title: "AWS SageMaker Deployment",
+        description: "Engineered automated hiring process and facilitated deployment using AWS SageMaker for scalable model serving",
         icon: Database
       },
       {
-        title: "Data Collection & Labeling",
-        description: "Orchestrated the collection and manual labeling of over 10,000 resumes, enhancing training dataset accuracy by 15%",
+        title: "Database Optimization",
+        description: "Normalized SQL databases, improving data handling and system performance by 2X through optimized queries",
+        icon: Database
+      },
+      {
+        title: "Agile Team Collaboration",
+        description: "Coordinated with cross-functional teams following Agile methodologies, participated in code reviews and ensured stakeholder satisfaction",
         icon: Code
       }
     ],
     technologies: [
-      "Python", "AWS", "NLTK", "NLP", "Spacy", "SQL", "Spark", "Power BI", "AWS Quick Sight"
+      "Python", "AWS", "AWS SageMaker", "NLTK", "NLP", "Spacy", "SQL", "Spark", "Power BI", "AWS QuickSight", "Deep Learning"
     ]
   },
   {
     title: "Data Analyst",
-    company: "Knowledge Matrix",
+    company: "Knowledge Matrix Pvt Ltd",
     location: "India",
     period: "March 2018 - February 2019",
     type: "Full-time",
-    description: "Focused on data analysis and visualization to drive business insights and improve decision-making processes.",
+    description: "Applied structured data analysis workflows and built ETL pipelines, uncovering valuable insights for decision-making and saving 5+ hours per 10 million records.",
     achievements: [
       {
-        title: "Analytics Dashboard Development",
-        description: "Developed and launched dynamic analytics dashboards using Tableau, hosted on AWS, facilitating instant data-driven insights",
-        icon: Code
-      },
-      {
-        title: "ETL Pipeline Implementation",
-        description: "Designed and implemented efficient ETL pipelines leveraging Python, SQL, and Spark, streamlining data flow and saving over 5 hours per 10 million records",
+        title: "ETL Pipeline Development",
+        description: "Built ETL pipelines using Python and SQL to gather, clean, and transform data, saving 5+ hours for processing 10 million records",
         icon: Database
       },
       {
-        title: "A/B Testing & Analytics",
-        description: "Spearheaded A/B testing and hypothesis evaluations on AWS to inform data-centric decisions, employing advanced machine learning techniques",
+        title: "Analytics Dashboard Development",
+        description: "Created visually appealing Tableau and PowerBI dashboards presenting key findings to stakeholders and supporting strategic planning",
+        icon: Code
+      },
+      {
+        title: "Statistical Analysis & Insights",
+        description: "Applied statistical techniques and data visualization to identify patterns, correlations, and anomalies for process improvement",
         icon: Brain
+      },
+      {
+        title: "Data Mining & Pattern Recognition",
+        description: "Performed data mining and pattern recognition to uncover valuable insights and provide actionable recommendations for business growth",
+        icon: Database
       }
     ],
     technologies: [
-      "Python", "SQL", "Tableau", "ETL", "AWS", "Hadoop", "Machine Learning", "A/B Testing"
+      "Python", "SQL", "Tableau", "Power BI", "ETL", "Data Analysis", "Statistical Analysis", "Data Mining"
     ]
   }
 ];
@@ -156,39 +219,46 @@ const education = [
 // Professional certifications and continuing education
 const certifications = [
   {
-    name: "Google Analytics Certification",
-    issuer: "Google",
+    name: "Python and Machine Learning",
+    issuer: "Coursera",
     date: "2023",
-    description: "Advanced analytics and data interpretation techniques",
-    icon: BookOpen
-  },
-  {
-    name: "Docker for Data Scientists",
-    issuer: "Docker",
-    date: "2023",
-    description: "Container orchestration and ML workflow deployment",
-    icon: Code
-  },
-  {
-    name: "SQL for Data Analysis",
-    issuer: "DataCamp",
-    date: "2022",
-    description: "Advanced SQL techniques for data analysis",
-    icon: Database
-  },
-  {
-    name: "Spark for Machine Learning & AI",
-    issuer: "Databricks",
-    date: "2023",
-    description: "Large-scale data processing and ML implementations",
+    description: "Comprehensive Python programming and machine learning fundamentals",
     icon: Brain
   },
   {
-    name: "Data Science Bootcamp",
+    name: "Introduction to Data Analytics",
+    issuer: "Coursera",
+    date: "2023",
+    description: "Data analytics concepts, tools, and techniques",
+    icon: Code
+  },
+  {
+    name: "Tableau",
+    issuer: "Udemy",
+    date: "2023",
+    description: "Advanced Tableau dashboard design and business intelligence",
+    icon: BarChart
+  },
+  {
+    name: "Power BI",
+    issuer: "Udemy",
+    date: "2023",
+    description: "Power BI report creation, DAX, and data modeling",
+    icon: BarChart
+  },
+  {
+    name: "Django",
     issuer: "Udemy",
     date: "2022",
-    description: "Comprehensive data science and ML training",
-    icon: BookOpen
+    description: "Django web framework and full-stack web development",
+    icon: Code
+  },
+  {
+    name: "Introduction to R Programming",
+    issuer: "DataCamp",
+    date: "2022",
+    description: "R programming for statistical analysis and data science",
+    icon: Brain
   }
 ];
 

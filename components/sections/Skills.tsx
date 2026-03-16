@@ -10,12 +10,12 @@ const skillCategories = [
     title: "Machine Learning & AI",
     description: "Expertise in developing and deploying advanced ML models and AI solutions",
     skills: [
-      { name: "LLMs & RAG", level: 90, description: "LangChain, Hugging Face, Vector Databases (FAISS, Pinecone), Fine-Tuning (LoRA), Prompt Engineering" },
-      { name: "PyTorch", level: 85, description: "Deep learning frameworks, neural networks, computer vision models" },
-      { name: "TensorFlow", level: 85, description: "Production ML models, model optimization, distributed training" },
-      { name: "NLP", level: 90, description: "Natural Language Processing, text analysis, language models" },
-      { name: "Computer Vision", level: 80, description: "OpenCV, image processing, object detection, pattern recognition" },
-      { name: "Deep Learning", level: 85, description: "Neural architecture design, model optimization, transfer learning" }
+      { name: "LLMs & RAG", level: 95, description: "Bedrock, Claude, Gemini, DeepSeek, ChatGPT. LangChain, Vector Databases (ChromaDB, FAISS, Pinecone), Fine-Tuning (LoRA), Prompt Engineering" },
+      { name: "PyTorch", level: 85, description: "Deep learning frameworks, neural networks, computer vision models, PyTorch Geometric" },
+      { name: "TensorFlow", level: 85, description: "Production ML models, model optimization, distributed training, Keras" },
+      { name: "NLP & LLM Applications", level: 95, description: "Natural Language Processing, sentiment analysis, semantic search, autonomous agents, multi-LLM architectures" },
+      { name: "Computer Vision", level: 80, description: "OpenCV, image processing, object detection, medical image analysis" },
+      { name: "Deep Learning", level: 85, description: "Neural architecture design, model optimization, transfer learning, GNN (Graph Neural Networks)" }
     ]
   },
   {
@@ -23,12 +23,12 @@ const skillCategories = [
     title: "Data Engineering",
     description: "Building robust data pipelines and scalable processing systems",
     skills: [
-      { name: "Python", level: 95, description: "Advanced programming, data structures, algorithmic solutions" },
-      { name: "SQL & NoSQL", level: 90, description: "PostgreSQL, MySQL, MongoDB, complex queries, database optimization" },
-      { name: "Big Data", level: 85, description: "Polars, PySpark, distributed computing, large-scale data processing" },
-      { name: "ETL Pipelines", level: 90, description: "Data extraction, transformation, loading, automation" },
-      { name: "Data Preprocessing", level: 95, description: "Cleaning, normalization, feature engineering" },
-      { name: "FastAPI", level: 95, description: "High-performance API development, async processing, caching" }
+      { name: "Python", level: 98, description: "Advanced programming, data structures, algorithmic solutions, automation" },
+      { name: "SQL & NoSQL", level: 92, description: "PostgreSQL, MySQL, MongoDB, Cassandra, DynamoDB, Elasticsearch, complex queries, optimization" },
+      { name: "Big Data & Streaming", level: 90, description: "Polars, PySpark, Hadoop, distributed computing, large-scale data processing" },
+      { name: "ETL & Data Pipelines", level: 95, description: "Data extraction, transformation, loading, automation, orchestration" },
+      { name: "Data Preprocessing", level: 98, description: "Cleaning, normalization, feature engineering, data validation" },
+      { name: "FastAPI", level: 98, description: "High-performance API development, async processing, caching, rate limiting, pagination" }
     ]
   },
   {
@@ -36,12 +36,12 @@ const skillCategories = [
     title: "Cloud & Infrastructure",
     description: "Deploying and managing scalable cloud solutions",
     skills: [
-      { name: "Docker", level: 85, description: "Container orchestration, microservices architecture" },
-      { name: "Kubernetes", level: 80, description: "Container management, service deployment, scaling" },
-      { name: "AWS Services", level: 85, description: "EC2, S3, Lambda, SageMaker, Bedrock, RDS" },
-      { name: "CI/CD", level: 85, description: "GitHub Actions, automated testing, deployment pipelines" },
-      { name: "Azure/GCP", level: 75, description: "Cloud platforms, infrastructure as code" },
-      { name: "Oracle Cloud", level: 80, description: "Deployment, resource management, monitoring" }
+      { name: "Docker", level: 90, description: "Container orchestration, microservices architecture, containerized applications" },
+      { name: "Kubernetes", level: 85, description: "Container management, service deployment, scaling, production orchestration" },
+      { name: "AWS Services", level: 90, description: "EC2, S3, Lambda, SageMaker, Bedrock, RDS, DynamoDB, comprehensive AWS ecosystem" },
+      { name: "Azure & Cloud Functions", level: 88, description: "Azure Functions, AppServices, cognitive services, cloud deployments" },
+      { name: "CI/CD & MLOps", level: 90, description: "GitHub Actions, automated testing, deployment pipelines, model versioning" },
+      { name: "Oracle Cloud", level: 82, description: "Deployment, resource management, monitoring, OCI services" }
     ]
   },
   {
@@ -49,12 +49,12 @@ const skillCategories = [
     title: "Data Visualization & Analysis",
     description: "Creating insightful visualizations and analytical solutions",
     skills: [
-      { name: "Tableau", level: 90, description: "Interactive dashboards, business intelligence, data storytelling" },
-      { name: "Power BI", level: 85, description: "Report creation, DAX, data modeling" },
-      { name: "Statistical Analysis", level: 85, description: "Hypothesis testing, regression analysis, forecasting" },
-      { name: "React", level: 80, description: "Frontend development, component design, state management" },
-      { name: "Streamlit", level: 90, description: "Data app development, interactive visualizations" },
-      { name: "Data Mining", level: 90, description: "Pattern recognition, clustering, association analysis" }
+      { name: "Tableau", level: 92, description: "Interactive dashboards, business intelligence, data storytelling, KPI visualization" },
+      { name: "Power BI", level: 90, description: "Report creation, DAX, data modeling, business analytics, leadership dashboards" },
+      { name: "Statistical Analysis", level: 88, description: "Hypothesis testing, regression analysis, forecasting, A/B testing, predictive analytics" },
+      { name: "React & JavaScript", level: 85, description: "Frontend development, component design, state management, interactive UIs" },
+      { name: "Streamlit", level: 92, description: "Data app development, interactive visualizations, dashboard creation" },
+      { name: "Data Mining & ML", level: 92, description: "Pattern recognition, clustering, classification, anomaly detection, recommendation systems" }
     ]
   }
 ];
@@ -103,18 +103,22 @@ export default function Skills() {
       {/* Current Learning & Development */}
       <div className="mt-16 bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-lg">
         <h3 className="text-xl font-semibold mb-6">Current Learning & Development Focus</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="bg-white p-6 rounded-lg shadow-sm">
-            <h4 className="font-semibold text-blue-600 mb-2">Advanced RAG Applications</h4>
-            <p className="text-gray-600">Working with enterprise RAG systems, document processing, and implementing advanced multi-modal LLM architectures</p>
+            <h4 className="font-semibold text-blue-600 mb-2">Multi-Provider LLM Architecture</h4>
+            <p className="text-gray-600">Integrating Claude, Gemini, and DeepSeek enabling seamless provider switching and cost optimization</p>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-sm">
+            <h4 className="font-semibold text-blue-600 mb-2">Enterprise RAG Systems</h4>
+            <p className="text-gray-600">Building scalable document processing and semantic search systems for complex knowledge retrieval</p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-sm">
             <h4 className="font-semibold text-blue-600 mb-2">Autonomous AI Agents</h4>
-            <p className="text-gray-600">Building AI agents that can automate complex workflows, integrate with various systems, and self-improve</p>
+            <p className="text-gray-600">Developing self-improving agents with error recovery and multi-step workflow automation</p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-sm">
-            <h4 className="font-semibold text-blue-600 mb-2">MLOps & LLMOps</h4>
-            <p className="text-gray-600">Advancing expertise in model deployment, monitoring, and scaling LLM applications in production</p>
+            <h4 className="font-semibold text-blue-600 mb-2">LLMOps & Model Deployment</h4>
+            <p className="text-gray-600">Advancing expertise in LLM lifecycle management, monitoring, and production deployment</p>
           </div>
         </div>
       </div>

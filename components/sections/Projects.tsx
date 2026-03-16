@@ -6,124 +6,134 @@ import { Github, ExternalLink, Code, Database, Brain, BarChart, LineChart, Serve
 // Comprehensive project data structure showcasing technical depth and measurable impact
 const projects = [
   {
-    title: "RAG-LLM-LangChain",
-    description: "Intelligent Loan Document Processing System using RAG, Lang Chain. This system implements an intelligent loan document processing assistant that helps analyze loan applications, policy documents, and historical loan data using RAG (Retrieval-Augmented Generation) with AWS Bedrock and ChromaDB.",
-    category: "AI/ML",
+    title: "RAG-LLM - Legal Document Processing System",
+    description: "Enterprise Retrieval-Augmented Generation system for intelligent legal and loan document Q&A. Leverages AWS Bedrock Titan embeddings for semantic vector search over PDFs and CSVs, with multi-LLM support (Claude, GPT-4, DeepSeek) and automatic fallback chains.",
+    category: "AI/RAG Applications",
     icon: Brain,
     metrics: [
-      "Document Processing (PDF, CSV)",
-      "Semantic Search with AWS Bedrock Embeddings",
-      "Vector Storage with ChromaDB",
-      "Intelligent Question Answering with Multiple LLM Support",
-      "Source Reference Tracking"
+      "Multi-LLM support: DeepSeek, GPT-4, Claude-3 with automatic fallback",
+      "Semantic vector search using AWS Bedrock Titan embeddings",
+      "Full source reference tracking for AI-generated responses",
+      "Document ingestion with embedding caching and batch optimization",
+      "Exponential backoff retries and error handling"
     ],
     technical_details: [
-      "Implemented fallback responses for connection issues",
-      "Built progress tracking and caching features",
-      "Added enhanced error handling capabilities",
-      "Developed vector storage with ChromaDB for efficient retrieval",
-      "Created source reference tracking for document citations"
+      "Architected scalable document ingestion pipeline with ChromaDB vector storage",
+      "Implemented retrieval-augmented generation using AWS Bedrock",
+      "Multi-LLM orchestration with automatic fallback chains and retry logic",
+      "Engineered embedding caching and batch processing for large files",
+      "Built source reference tracking system for auditability",
+      "Designed progress tracking and performance monitoring"
     ],
     technologies: [
-      "Retrieval-Augmented Generation (RAG)", "LangChain", "Natural Language Processing (NLP)", "Large Language Models (LLM)", "AWS Bedrock", "ChromaDB"
+      "AWS Bedrock", "ChromaDB", "LangChain", "Claude API", "GPT-4", "DeepSeek", "Python", "RAG", "Vector Databases", "Semantic Search", "LLMs"
     ],
     github: "https://github.com/naveenmorla1901/RAG-LLM-Deepseek",
     demo: null,
     image: "/api/placeholder/600/400"
   },
   {
-    title: "Agentic multi-model AutoScrape",
-    description: "I developed AutoScrape AI, an innovative platform that transforms natural language requests into functional web scraping code using dual Large Language Models (LLMs). Users simply describe what data they need from any website, and the system automatically generates, tests, and refines Python scraping code until it successfully extracts the requested information.",
-    category: "AI/Web Scraping",
-    icon: Globe,
+    title: "Auto-Scrapper - LLM-Powered Intelligent Web Scraping",
+    description: "Innovative agentic platform that transforms natural language requests into functional web scraping code using multi-LLM architecture. Users describe data needs, and the system auto-generates, tests, and refines scraping code until successful.",
+    category: "AI/LLM Applications",
+    icon: Brain,
     metrics: [
-      "Dual-LLM Architecture: Cost-effective helper LLM (Gemini) handles prompt formatting and error analysis, while a user-selected coding LLM generates the actual scraping code",
-      "Intelligent Refinement Loop: Tests generated code, analyzes errors, and refines the approach until successful",
-      "Data Validation: Verifies that extracted data fulfills user requirements, not just that code executes",
-      "Multi-Provider Support: Integrates with OpenAI, Anthropic, and Google using LangChain",
-      "Secure Code Execution: Sandboxed environment with resource limitations and dependency management"
+      "Dual-LLM architecture: cost-effective Gemini for analysis, user-selected LLM (GPT-4, Claude, DeepSeek) for code",
+      "Intelligent refinement loop with automated error handling",
+      "Multi-provider support: OpenAI, Anthropic, Google via LangChain",
+      "Real-time token usage tracking and status updates",
+      "Secure sandboxed code execution with dependency management"
     ],
     technical_details: [
       "Backend: FastAPI with asynchronous processing",
-      "Frontend: Responsive interface with Bootstrap",
-      "Code Execution: Secure sandbox with dynamic library installation",
-      "Error Analysis: Specialized detection for web scraping errors",
-      "Data Processing: JSON extraction and validation against requirements"
+      "Frontend: Responsive interface with Bootstrap and real-time updates",
+      "Code Execution: Secure sandbox with dynamic library installation and resource limitations",
+      "LLM Integration: Fallback chains, exponential backoff retries, prompt optimization",
+      "Data Processing: JSON extraction, requirement validation, error analysis"
     ],
     technologies: [
-      "Large Language Model (LLM) Integration", "AI Application Development", "Full-Stack Development", "LangChain", "OpenAI API", "Claude API", "Gemini API", "FastAPI"
+      "FastAPI", "LangChain", "OpenAI API", "Claude API", "Gemini API", "Playwright", "BeautifulSoup", "Docker", "Python", "Bootstrap", "LLM Orchestration"
     ],
     github: "https://github.com/naveenmorla1901/auto-scrapper",
     demo: null,
     image: "/api/placeholder/600/400"
   },
   {
-    title: "Automated Job Market Analytics System",
-    description: "Developed a comprehensive job tracking system that automatically scrapes, processes, and visualizes tech job postings from 140+ corporate career sites every one hour, providing real-time insights into the tech job market with advanced filtering and visualization capabilities.",
-    category: "Data Analytics",
-    icon: BarChart,
+    title: "Job Tracker - Automated Job Market Analytics",
+    description: "Full-stack job market analytics platform that automatically scrapes tech job postings from 140+ corporate career sites hourly, providing real-time insights into market trends with advanced filtering and visualization.",
+    category: "Full-Stack/Web Scraping",
+    icon: LineChart,
     metrics: [
-      "Built full-stack application using Python, FastAPI, PostgreSQL, and Streamlit",
-      "Implemented 140+ custom web scrapers for major tech companies",
-      "Created intelligent role validation system using NLP techniques",
-      "Designed interactive dashboard with real-time filtering capabilities",
-      "Automated hourly job data updates using APScheduler"
+      "Scrapes 140+ corporate career portals hourly",
+      "Persists 10,000+ job postings in PostgreSQL",
+      "Automatic cleanup of records older than 7 days",
+      "Interactive Streamlit dashboard with real-time filtering",
+      "System monitoring tracking CPU, memory, disk usage"
     ],
     technical_details: [
-      "Backend: Python, FastAPI, SQLAlchemy, PostgreSQL",
-      "Frontend: Streamlit, Plotly, Pandas",
-      "DevOps: GitHub Actions, Nginx, Systemd",
-      "Monitoring: Custom metrics dashboard, psutil",
-      "Deployed on Oracle Cloud with CI/CD pipeline via GitHub Actions"
+      "Built full-stack application with Python, FastAPI, PostgreSQL, Streamlit",
+      "Implemented 140+ custom web scrapers for major tech companies",
+      "Created intelligent role validation system using NLP techniques",
+      "Designed interactive dashboard with real-time filtering by role, company, location",
+      "Automated hourly updates using APScheduler with GitHub Actions CI/CD",
+      "Deployed on Oracle Cloud Infrastructure with Nginx reverse proxy"
     ],
     technologies: [
-      "Python", "FastAPI", "PostgreSQL", "Streamlit", "Web Scraping", "SQLAlchemy", "GitHub Actions", "Oracle Cloud", "CI/CD", "Data Visualization", "Data Engineering"
+      "FastAPI", "PostgreSQL", "Streamlit", "APScheduler", "Python", "SQLAlchemy", "GitHub Actions", "Oracle Cloud", "Nginx", "CI/CD", "Data Visualization", "Web Scraping"
     ],
     github: "https://github.com/naveenmorla1901/job-tracker",
     demo: null,
     image: "/api/placeholder/600/400"
   },
   {
-    title: "Graph Neural Network-Based Anomaly Detection",
-    description: "Research project focusing on anomaly detection in multivariate time series data using Graph Neural Networks. Associated with Bowling Green State University.",
-    category: "Machine Learning",
+    title: "GNN - Graph Neural Network Anomaly Detection",
+    description: "Research project developing Graph Neural Network-based anomaly detection for multivariate time series data. Leverages graph-structured representations to model complex inter-sensor dependencies for industrial IoT datasets with superior performance vs traditional baselines.",
+    category: "Deep Learning/Research",
     icon: Brain,
     metrics: [
-      "Developed novel GNN approach for multivariate time series analysis",
-      "Presented research at university symposium",
-      "Created reusable framework for anomaly detection"
+      "Designed graph construction from sensor correlation matrices",
+      "Outperformed traditional statistical baselines in detection accuracy",
+      "Open-sourced implementation achieving 3 GitHub stars and 1 fork",
+      "Practical applicability for predictive maintenance in manufacturing",
+      "Demonstrated effectiveness on industrial IoT datasets"
     ],
     technical_details: [
-      "Implemented graph structure representation of time series data",
-      "Developed neural network architectures for pattern recognition",
-      "Created visualization components for anomaly detection results",
-      "Benchmarked against traditional anomaly detection techniques"
+      "Developed Graph Neural Network models using PyTorch Geometric",
+      "Implemented graph construction from multivariate time series",
+      "Trained GNN models to identify anomalous temporal patterns",
+      "Benchmarked against traditional anomaly detection methods",
+      "Created visualization tools for anomaly pattern analysis",
+      "Published implementation on GitHub with documentation"
     ],
     technologies: [
-      "Graph Neural Networks", "Python", "Deep Learning", "Time Series Analysis", "PyTorch", "Data Visualization"
+      "PyTorch", "PyTorch Geometric", "Graph Neural Networks", "Time Series Analysis", "Python", "Deep Learning", "Anomaly Detection"
     ],
     github: "https://github.com/naveenmorla1901/GNN",
     demo: null,
     image: "/api/placeholder/600/400"
   },
   {
-    title: "MGMT Glioblastoma Prediction from MRI",
-    description: "This project investigates whether there are sufficient feature differences in MGMT positive and MGMT negative glioblastomas to classify them based on MRI scans alone using Deep Convolutional Neural Networks.",
-    category: "Medical AI",
+    title: "MGMT Glioblastoma Classification from MRI Scans",
+    description: "Research project investigating MGMT positive/negative glioblastoma classification from MRI scans using Deep Convolutional Neural Networks. Developed during M.S. in Data Science coursework.",
+    category: "Medical AI/Deep Learning",
     icon: Brain,
     metrics: [
       "Developed CNN model for medical image classification",
-      "Achieved significant accuracy in predicting MGMT status",
-      "Created visualization tools for feature importance"
+      "Investigated feature differences between MGMT+ and MGMT- tumors",
+      "Achieved significant classification accuracy on MRI datasets",
+      "Created feature importance visualization tools",
+      "Implemented data augmentation for limited medical datasets"
     ],
     technical_details: [
       "Implemented deep learning architectures for medical image analysis",
-      "Developed preprocessing pipeline for MRI scans",
-      "Created data augmentation techniques for limited medical datasets",
-      "Built evaluation framework to assess model performance"
+      "Developed comprehensive preprocessing pipeline for MRI scans",
+      "Created data augmentation techniques for limited datasets",
+      "Built evaluation framework with cross-validation and metrics",
+      "Implemented visualization tools for CNN feature analysis",
+      "Optimized model architecture for medical imaging tasks"
     ],
     technologies: [
-      "Deep Learning", "Convolutional Neural Networks", "Medical Image Analysis", "Python", "TensorFlow", "Data Visualization"
+      "TensorFlow", "Deep Learning", "Convolutional Neural Networks", "Medical Imaging", "Python", "Image Processing"
     ],
     github: null,
     demo: null,
